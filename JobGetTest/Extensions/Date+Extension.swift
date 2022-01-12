@@ -9,6 +9,9 @@ import Foundation
 
 extension Date {
     
+    /// The date formatted as a day - month - year string
+    var dayPrettyString: String { formatted(format: "DD MMMM yyyy") }
+    
     /// The date formatted as a month - day - year string
     var dayString: String { formatted(format: "MM-dd-yyyy") }
     

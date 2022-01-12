@@ -15,12 +15,11 @@ final class HomeViewController: UIViewController {
     private var transactions = [TransactionList]()
     private var bag = Set<AnyCancellable>()
     private lazy var tableView: UITableView = {
-        let table = UITableView()
+        let table = UITableView(frame: .zero, style: .insetGrouped)
         table.register(HomeTransactionCell.self, forCellReuseIdentifier: transactionCellId)
         table.delegate = self
         table.dataSource = self
         table.separatorStyle = .none
-        table.background(.systemBackground)
         return table
     }()
     init(viewModel: HomeViewModel) {
@@ -70,6 +69,11 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         transactions[safe: section]?.transactions.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let list = transactions[safe: section] else { return nil }
+        return UILabel.body(list.date.dayPrettyString, size: 14, color: .secondaryLabel).wrapAndPin(padding: UIConstants.spacingDouble)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
