@@ -8,6 +8,15 @@
 import UIKit
 
 final class HomeTransactionCell: UITableViewCell {
+    private struct Constants {
+        static let imageViewSide: CGFloat = 40
+    }
+    private let imageViewCircle = UIImageView()
+    private let trasactionLetterLabel = UILabel.make(weight: .semibold, size: 25, color: .white, numberOfLines: 1)
+    private let nameLabel = UILabel.make(weight: .semibold, size: 16)
+    private let amountLabel = UILabel.make(weight: .semibold, size: 16)
+    private let timeLabel = UILabel.make(size: 12, color: .secondaryLabel, numberOfLines: 1)
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -16,12 +25,35 @@ final class HomeTransactionCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupUI() {
+        let imageWrapper = imageViewCircle.dimensions(width: Constants.imageViewSide, height: Constants.imageViewSide)
+            .rounded(radius: Constants.imageViewSide / 2)
+            .background(UIColor.pastels.randomElement()!)
+            .wrapAndCenterKeepingDimensions()
+            .width(Constants.imageViewSide)
+            .minHeight(Constants.imageViewSide)
         
+        amountLabel.align(.right)
+        let nameAndAmountStack = [nameLabel, amountLabel].hStack()
+        let labelsStack = [nameAndAmountStack, timeLabel].vStack().wrapAndPin(top: UIConstants.spacing, bottom: -UIConstants.spacing)
+        
+        [imageWrapper, labelsStack].hStack(spacing: UIConstants.spacingDouble)
+            .addAndPinAsSubview(of: contentView, padding: UIConstants.spacingDouble)
+        trasactionLetterLabel.addAsSubview(of: contentView)
+            .constrained()
+            .centered(inView: imageWrapper)
     }
     
     func setTransaction(_ transaction: Transaction) {
-        textLabel?.text = transaction.name
+        nameLabel.text = transaction.name
+        amountLabel.text = transaction.amount.asCurrency
+        timeLabel.text = transaction.date?.timeString
+        if let firstLetter = transaction.name?.prefix(1) {
+            trasactionLetterLabel.text = String(firstLetter)
+        }
+        let isIncome = transaction.trasactionType == Int32(TransactionType.income.rawValue)
+        trasactionLetterLabel.isHidden = isIncome
+        imageViewCircle.image = isIncome ? UIImage(systemName: "plus") : nil
     }
 }

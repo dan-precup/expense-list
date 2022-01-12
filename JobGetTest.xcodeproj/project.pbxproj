@@ -73,6 +73,8 @@
 		8632769D278EEBE8005D40F9 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */; };
 		8632769F278EF854005D40F9 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632769E278EF854005D40F9 /* TransactionService.swift */; };
 		863276A1278EFC48005D40F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A0278EFC48005D40F9 /* Date+Extension.swift */; };
+		863276A3278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */; };
+		863276A4278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,7 @@
 		8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
 		8632769E278EF854005D40F9 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		863276A0278EFC48005D40F9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extesnion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,7 @@
 				8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */,
 				8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */,
 				863276A0278EFC48005D40F9 /* Date+Extension.swift */,
+				863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -496,6 +500,7 @@
 				8600E9A3278EBA2B00EE9C79 /* ViewLoadedListener.swift in Sources */,
 				8600E9D4278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
 				8632769D278EEBE8005D40F9 /* NumberFormatter+Extension.swift in Sources */,
+				863276A3278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +530,7 @@
 				8600E9CF278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */,
 				8600E9C8278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
 				8600E98B278EB5D400EE9C79 /* BaseCoordinator.swift in Sources */,
+				863276A4278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */,
 				8600E9AD278EC22100EE9C79 /* HomeViewController.swift in Sources */,
 				8600E9DB278ED33300EE9C79 /* JGDropDown.swift in Sources */,
 				8600E98A278EB5D000EE9C79 /* BaseViewModel.swift in Sources */,
