@@ -32,6 +32,28 @@
 		8600E9A3278EBA2B00EE9C79 /* ViewLoadedListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A2278EBA2B00EE9C79 /* ViewLoadedListener.swift */; };
 		8600E9A5278EBAB100EE9C79 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */; };
 		8600E9A7278EBC8E00EE9C79 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A6278EBC8E00EE9C79 /* CoreDataStorage.swift */; };
+		8600E9A8278EC20700EE9C79 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A6278EBC8E00EE9C79 /* CoreDataStorage.swift */; };
+		8600E9A9278EC20A00EE9C79 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */; };
+		8600E9AA278EC20E00EE9C79 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E995278EB74100EE9C79 /* AppCoordinator.swift */; };
+		8600E9AC278EC21800EE9C79 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E98E278EB61B00EE9C79 /* Log.swift */; };
+		8600E9AD278EC22100EE9C79 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E99C278EB84900EE9C79 /* HomeViewController.swift */; };
+		8600E9AE278EC22100EE9C79 /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E99A278EB84300EE9C79 /* HomeContracts.swift */; };
+		8600E9AF278EC22100EE9C79 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E99E278EB85600EE9C79 /* HomeViewModel.swift */; };
+		8600E9B0278EC22100EE9C79 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A0278EB86E00EE9C79 /* HomeCoordinator.swift */; };
+		8600E9B1278EC22500EE9C79 /* ViewLoadedListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A2278EBA2B00EE9C79 /* ViewLoadedListener.swift */; };
+		8600E9B2278EC22500EE9C79 /* LoadingNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E990278EB66000EE9C79 /* LoadingNotifier.swift */; };
+		8600E9B6278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9B5278EC24900EE9C79 /* HomeTransactionCell.swift */; };
+		8600E9B7278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9B5278EC24900EE9C79 /* HomeTransactionCell.swift */; };
+		8600E9BA278EC34A00EE9C79 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9B9278EC34A00EE9C79 /* TransactionList.swift */; };
+		8600E9BB278EC34A00EE9C79 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9B9278EC34A00EE9C79 /* TransactionList.swift */; };
+		8600E9BD278EC41200EE9C79 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9BC278EC41200EE9C79 /* Collection+Extension.swift */; };
+		8600E9BE278EC41200EE9C79 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9BC278EC41200EE9C79 /* Collection+Extension.swift */; };
+		8600E9C0278EC72700EE9C79 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9BF278EC72600EE9C79 /* UIConstants.swift */; };
+		8600E9C1278EC72700EE9C79 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9BF278EC72600EE9C79 /* UIConstants.swift */; };
+		8600E9C4278EC82700EE9C79 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */; };
+		8600E9C5278EC82700EE9C79 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */; };
+		8600E9C7278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */; };
+		8600E9C8278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +100,12 @@
 		8600E9A2278EBA2B00EE9C79 /* ViewLoadedListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadedListener.swift; sourceTree = "<group>"; };
 		8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistry.swift; sourceTree = "<group>"; };
 		8600E9A6278EBC8E00EE9C79 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		8600E9B5278EC24900EE9C79 /* HomeTransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransactionCell.swift; sourceTree = "<group>"; };
+		8600E9B9278EC34A00EE9C79 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		8600E9BC278EC41200EE9C79 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		8600E9BF278EC72600EE9C79 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,10 +159,12 @@
 				8600E981278EB4AB00EE9C79 /* AppDelegate */,
 				8600E98D278EB60E00EE9C79 /* Services */,
 				8600E985278EB52A00EE9C79 /* Bases */,
+				8600E9B8278EC33000EE9C79 /* Models */,
+				8600E9C2278EC81500EE9C79 /* Components */,
 				8600E982278EB4F300EE9C79 /* Contracts */,
 				8600E997278EB80200EE9C79 /* Screens */,
-				8600E998278EB82100EE9C79 /* Resources */,
 				8600E992278EB6E700EE9C79 /* Extensions */,
+				8600E998278EB82100EE9C79 /* Resources */,
 				8600E95F278EB28600EE9C79 /* Info.plist */,
 			);
 			path = JobGetTest;
@@ -200,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				8600E993278EB6F600EE9C79 /* UIView+Extesnion.swift */,
+				8600E9BC278EC41200EE9C79 /* Collection+Extension.swift */,
+				8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +250,7 @@
 				8600E95A278EB28600EE9C79 /* Assets.xcassets */,
 				8600E95C278EB28600EE9C79 /* LaunchScreen.storyboard */,
 				8600E957278EB28600EE9C79 /* JobGetTest.xcdatamodeld */,
+				8600E9BF278EC72600EE9C79 /* UIConstants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -227,10 +260,27 @@
 			children = (
 				8600E99A278EB84300EE9C79 /* HomeContracts.swift */,
 				8600E9A0278EB86E00EE9C79 /* HomeCoordinator.swift */,
+				8600E9B5278EC24900EE9C79 /* HomeTransactionCell.swift */,
 				8600E99C278EB84900EE9C79 /* HomeViewController.swift */,
 				8600E99E278EB85600EE9C79 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8600E9B8278EC33000EE9C79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8600E9B9278EC34A00EE9C79 /* TransactionList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8600E9C2278EC81500EE9C79 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,17 +416,23 @@
 				8600E99B278EB84300EE9C79 /* HomeContracts.swift in Sources */,
 				8600E9A7278EBC8E00EE9C79 /* CoreDataStorage.swift in Sources */,
 				8600E996278EB74100EE9C79 /* AppCoordinator.swift in Sources */,
+				8600E9C7278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
+				8600E9C4278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
 				8600E9A1278EB86E00EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E987278EB54200EE9C79 /* BaseCoordinator.swift in Sources */,
 				8600E994278EB6F600EE9C79 /* UIView+Extesnion.swift in Sources */,
 				8600E94F278EB28600EE9C79 /* AppDelegate.swift in Sources */,
+				8600E9BA278EC34A00EE9C79 /* TransactionList.swift in Sources */,
 				8600E989278EB5CC00EE9C79 /* BaseViewModel.swift in Sources */,
+				8600E9BD278EC41200EE9C79 /* Collection+Extension.swift in Sources */,
 				8600E984278EB50800EE9C79 /* Coordinatable.swift in Sources */,
 				8600E959278EB28600EE9C79 /* JobGetTest.xcdatamodeld in Sources */,
 				8600E99F278EB85600EE9C79 /* HomeViewModel.swift in Sources */,
 				8600E9A5278EBAB100EE9C79 /* ServiceRegistry.swift in Sources */,
 				8600E98F278EB61B00EE9C79 /* Log.swift in Sources */,
+				8600E9B6278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */,
 				8600E991278EB66000EE9C79 /* LoadingNotifier.swift in Sources */,
+				8600E9C0278EC72700EE9C79 /* UIConstants.swift in Sources */,
 				8600E99D278EB84900EE9C79 /* HomeViewController.swift in Sources */,
 				8600E951278EB28600EE9C79 /* SceneDelegate.swift in Sources */,
 				8600E9A3278EBA2B00EE9C79 /* ViewLoadedListener.swift in Sources */,
@@ -387,10 +443,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8600E9B2278EC22500EE9C79 /* LoadingNotifier.swift in Sources */,
+				8600E9AE278EC22100EE9C79 /* HomeContracts.swift in Sources */,
+				8600E9BB278EC34A00EE9C79 /* TransactionList.swift in Sources */,
+				8600E9AF278EC22100EE9C79 /* HomeViewModel.swift in Sources */,
+				8600E9A9278EC20A00EE9C79 /* ServiceRegistry.swift in Sources */,
+				8600E9B7278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */,
+				8600E9B1278EC22500EE9C79 /* ViewLoadedListener.swift in Sources */,
+				8600E9A8278EC20700EE9C79 /* CoreDataStorage.swift in Sources */,
 				8600E969278EB28700EE9C79 /* JobGetTestTests.swift in Sources */,
+				8600E9C5278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
+				8600E9B0278EC22100EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E98C278EB5D600EE9C79 /* Coordinatable.swift in Sources */,
+				8600E9C1278EC72700EE9C79 /* UIConstants.swift in Sources */,
+				8600E9BE278EC41200EE9C79 /* Collection+Extension.swift in Sources */,
+				8600E9C8278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
 				8600E98B278EB5D400EE9C79 /* BaseCoordinator.swift in Sources */,
+				8600E9AD278EC22100EE9C79 /* HomeViewController.swift in Sources */,
 				8600E98A278EB5D000EE9C79 /* BaseViewModel.swift in Sources */,
+				8600E9AC278EC21800EE9C79 /* Log.swift in Sources */,
+				8600E9AA278EC20E00EE9C79 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

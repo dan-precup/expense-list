@@ -9,4 +9,5 @@ import Foundation
 
 final class ServiceRegistry {
     static let shared = ServiceRegistry()
+    let localStorage: LocalStorageService = CoreDataStorage()
 }
