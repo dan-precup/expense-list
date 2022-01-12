@@ -66,6 +66,11 @@
 		8600E9D8278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */; };
 		8600E9DA278ED33300EE9C79 /* JGDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D9278ED33300EE9C79 /* JGDropDown.swift */; };
 		8600E9DB278ED33300EE9C79 /* JGDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D9278ED33300EE9C79 /* JGDropDown.swift */; };
+		8600E9DD278EE04700EE9C79 /* TitledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9DC278EE04700EE9C79 /* TitledTextField.swift */; };
+		8600E9DE278EE04700EE9C79 /* TitledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9DC278EE04700EE9C79 /* TitledTextField.swift */; };
+		8600E9E0278EE7DB00EE9C79 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */; };
+		8600E9E1278EE7DB00EE9C79 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */; };
+		8632769D278EEBE8005D40F9 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +129,9 @@
 		8600E9D3278ECDEC00EE9C79 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		8600E9D9278ED33300EE9C79 /* JGDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGDropDown.swift; sourceTree = "<group>"; };
+		8600E9DC278EE04700EE9C79 /* TitledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTextField.swift; sourceTree = "<group>"; };
+		8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +260,8 @@
 				8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */,
 				8600E9D3278ECDEC00EE9C79 /* UILabel+extension.swift */,
 				8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */,
+				8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */,
+				8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +311,7 @@
 			children = (
 				8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */,
 				8600E9D9278ED33300EE9C79 /* JGDropDown.swift */,
+				8600E9DC278EE04700EE9C79 /* TitledTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -451,6 +462,7 @@
 				8600E996278EB74100EE9C79 /* AppCoordinator.swift in Sources */,
 				8600E9C7278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
 				8600E9C4278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
+				8600E9E0278EE7DB00EE9C79 /* Double+Extension.swift in Sources */,
 				8600E9A1278EB86E00EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E987278EB54200EE9C79 /* BaseCoordinator.swift in Sources */,
 				8600E9D1278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */,
@@ -472,8 +484,10 @@
 				8600E99D278EB84900EE9C79 /* HomeViewController.swift in Sources */,
 				8600E951278EB28600EE9C79 /* SceneDelegate.swift in Sources */,
 				8600E9CB278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */,
+				8600E9DD278EE04700EE9C79 /* TitledTextField.swift in Sources */,
 				8600E9A3278EBA2B00EE9C79 /* ViewLoadedListener.swift in Sources */,
 				8600E9D4278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
+				8632769D278EEBE8005D40F9 /* NumberFormatter+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,12 +504,14 @@
 				8600E9B1278EC22500EE9C79 /* ViewLoadedListener.swift in Sources */,
 				8600E9A8278EC20700EE9C79 /* CoreDataStorage.swift in Sources */,
 				8600E9D8278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */,
+				8600E9DE278EE04700EE9C79 /* TitledTextField.swift in Sources */,
 				8600E9D5278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
 				8600E969278EB28700EE9C79 /* JobGetTestTests.swift in Sources */,
 				8600E9C5278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
 				8600E9B0278EC22100EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E98C278EB5D600EE9C79 /* Coordinatable.swift in Sources */,
 				8600E9C1278EC72700EE9C79 /* UIConstants.swift in Sources */,
+				8600E9E1278EE7DB00EE9C79 /* Double+Extension.swift in Sources */,
 				8600E9CC278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */,
 				8600E9BE278EC41200EE9C79 /* Collection+Extension.swift in Sources */,
 				8600E9CF278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */,

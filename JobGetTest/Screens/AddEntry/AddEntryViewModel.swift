@@ -12,8 +12,12 @@ protocol AddEntryCoordinator: Coordinatable {}
 protocol AddEntryViewModel: LoadingNotifier, JGDropDownDelegate, ViewLoadedListener {
     var transactionTypeOptions: [String] { get }
     var ctaEnabled: CurrentValueSubject<Bool, Never> { get }
+    var transactionAmount: CurrentValueSubject<Double, Never> { get }
+
+    func didChangeStepperAmount(to: Double)
     func didChangeAmount(to: String?)
     func didChangeDescription(to: String?)
+    func didSelectCreateEntity()
 }
 
 enum TransactionType: Int, CaseIterable {
@@ -33,8 +37,8 @@ final class AddEntryViewModelImpl: BaseViewModel, AddEntryViewModel {
     private let coordinator: AddEntryCoordinator
     
     var transactionType: TransactionType = .expense
-    var transactionDescription = CurrentValueSubject<String, Never>("")
-    var transactionAmount = CurrentValueSubject<Double, Never>(0)
+    let transactionDescription = CurrentValueSubject<String, Never>("")
+    let transactionAmount = CurrentValueSubject<Double, Never>(0)
     let ctaEnabled = CurrentValueSubject<Bool, Never>(false)
     init(coordinator: AddEntryCoordinator) {
         self.coordinator = coordinator
@@ -44,7 +48,6 @@ final class AddEntryViewModelImpl: BaseViewModel, AddEntryViewModel {
     func didFinishLoading() {
         transactionDescription.combineLatest(transactionAmount)
             .sink(receiveValue: { [weak self] description, amount in
-                print("PLM", !description.isEmpty && amount != 0, description, amount)
                 self?.ctaEnabled.value = !description.isEmpty && amount != 0
             }).store(in: &bag)
     }
@@ -55,11 +58,20 @@ final class AddEntryViewModelImpl: BaseViewModel, AddEntryViewModel {
     
     func didChangeAmount(to newAmount: String?) {
         guard let newAmount = newAmount else { return }
-        transactionAmount.value = Double(newAmount) ?? 0
+        transactionAmount.value = NumberFormatter.currencyDouble(from: newAmount)
     }
     
     func didChangeDescription(to newDescription: String?) {
         transactionDescription.value = newDescription ?? ""
+    }
+    
+    func didChangeStepperAmount(to newAmount: Double) {
+        transactionAmount.value = newAmount
+    }
+    
+    func didSelectCreateEntity() {
+        guard ctaEnabled.value else { return }
+        
     }
 }
 
