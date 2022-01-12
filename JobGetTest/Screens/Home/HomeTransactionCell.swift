@@ -14,7 +14,7 @@ final class HomeTransactionCell: UITableViewCell {
     private let circleView = UIView()
     private let trasactionLetterLabel = UILabel.make(weight: .semibold, size: 25, color: .white, numberOfLines: 1)
     private let nameLabel = UILabel.make(weight: .semibold, size: 16)
-    private let amountLabel = UILabel.make(weight: .semibold, size: 16)
+    private let amountLabel = UILabel.make(weight: .regular, size: 16)
     private let timeLabel = UILabel.make(size: 12, color: .secondaryLabel, numberOfLines: 1)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,17 +39,16 @@ final class HomeTransactionCell: UITableViewCell {
         let labelsStack = [nameAndAmountStack, timeLabel].vStack().wrapAndPin(top: UIConstants.spacing, bottom: -UIConstants.spacing)
         
         [circleWrapper, labelsStack].hStack(spacing: UIConstants.spacingDouble)
-            .addAndPinAsSubview(of: contentView, padding: UIConstants.spacingDouble)
+            .addAndPinAsSubview(of: contentView, horizontalPadding: UIConstants.spacingDouble, verticalPadding: UIConstants.spacing)
         trasactionLetterLabel.addAsSubview(of: contentView)
             .constrained()
             .centered(inView: circleWrapper)
+        selectionStyle = .none
     }
     
     func setTransaction(_ transaction: Transaction) {
         nameLabel.text = transaction.name
-        let isIncome = transaction.trasactionType == Int32(TransactionType.income.rawValue)
-        let incomeMultiplier: Double = isIncome ? 1 : -1
-        amountLabel.text = (incomeMultiplier * transaction.amount).asCurrency
+        amountLabel.text = transaction.signedAmount.asCurrency
         timeLabel.text = transaction.date?.timeString
         if let firstLetter = transaction.name?.prefix(1) {
             trasactionLetterLabel.text = String(firstLetter)
