@@ -31,6 +31,7 @@
 		8600E9A1278EB86E00EE9C79 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A0278EB86E00EE9C79 /* HomeCoordinator.swift */; };
 		8600E9A3278EBA2B00EE9C79 /* ViewLoadedListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A2278EBA2B00EE9C79 /* ViewLoadedListener.swift */; };
 		8600E9A5278EBAB100EE9C79 /* ServiceRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */; };
+		8600E9A7278EBC8E00EE9C79 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9A6278EBC8E00EE9C79 /* CoreDataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		8600E9A0278EB86E00EE9C79 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		8600E9A2278EBA2B00EE9C79 /* ViewLoadedListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadedListener.swift; sourceTree = "<group>"; };
 		8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegistry.swift; sourceTree = "<group>"; };
+		8600E9A6278EBC8E00EE9C79 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			children = (
 				8600E98E278EB61B00EE9C79 /* Log.swift */,
 				8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */,
+				8600E9A6278EBC8E00EE9C79 /* CoreDataStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8600E99B278EB84300EE9C79 /* HomeContracts.swift in Sources */,
+				8600E9A7278EBC8E00EE9C79 /* CoreDataStorage.swift in Sources */,
 				8600E996278EB74100EE9C79 /* AppCoordinator.swift in Sources */,
 				8600E9A1278EB86E00EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E987278EB54200EE9C79 /* BaseCoordinator.swift in Sources */,
