@@ -9,6 +9,10 @@ import UIKit
 
 extension UIView {
     
+    static func line(ofColor: UIColor = .separator) -> UIView {
+        UIView().constrained().background(ofColor)
+    }
+    
     @discardableResult
     func background(_ color: UIColor = .systemBackground) -> Self {
         backgroundColor = color
@@ -77,6 +81,113 @@ extension UIView {
         bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -vPadding).isActive = true
         return self
     }
+    
+    @discardableResult
+    func pinHorizontaly(to view: UIView, padding: CGFloat = 0) -> Self {
+        return pinHorizontaly(to: view, leadingMargin: padding, trailingMargin: -padding)
+    }
+    
+    @discardableResult
+    func pinHorizontaly(to view: UIView, leadingMargin: CGFloat = 0, trailingMargin: CGFloat = 0) -> Self {
+        return leading(to: view, constant: leadingMargin)
+            .trailing(to: view, constant: trailingMargin)
+    }
+    
+    @discardableResult
+    func pinToBottom(of view: UIView, leading: CGFloat = 0, trailing: CGFloat = 0, bottom: CGFloat = 0) -> Self {
+        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leading).isActive = true
+        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: trailing).isActive = true
+        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottom).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func minWidth(_ value: CGFloat) -> Self {
+        widthAnchor.constraint(greaterThanOrEqualToConstant: value).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func minHeight(_ value: CGFloat) -> Self {
+        heightAnchor.constraint(greaterThanOrEqualToConstant: value).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func wrapAndPin(padding: CGFloat = 0) -> UIView {
+       return wrapAndPin(top: padding, bottom: -padding, leading: padding, trailing: -padding)
+    }
+    
+    @discardableResult
+    func wrapAndPin(top: CGFloat = 0, bottom: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0) -> UIView {
+        let view = UIView()
+        constrained()
+            .addAsSubview(of: view)
+            .top(to: view, constant: top)
+            .bottom(to: view, constant: bottom)
+            .leading(to: view, constant:leading)
+            .trailing(to: view, constant: trailing)
+        return view
+    }
+    
+    @discardableResult
+    func wrapAndPinToTop(top: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0) -> UIView {
+        let view = UIView()
+        constrained()
+            .addAsSubview(of: view)
+            .top(to: view, constant: top)
+            .leading(to: view, constant:leading)
+            .trailing(to: view, constant: trailing)
+        return view
+    }
+    
+    @discardableResult
+    func wrapAndPinToBottom(bottom: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0) -> UIView {
+        let view = UIView()
+        constrained()
+            .addAsSubview(of: view)
+            .bottom(to: view, constant: bottom)
+            .leading(to: view, constant:leading)
+            .trailing(to: view, constant: trailing)
+        return view
+    }
+    
+    @discardableResult
+    func wrapAndCenter(width: CGFloat = 0, height: CGFloat = 0, constrainAxis: NSLayoutConstraint.Axis? = .horizontal) -> UIView {
+        let view = UIView()
+        constrained()
+            .addAsSubview(of: view)
+            .dimensions(width: width, height: height)
+        
+        guard let constrainAxis = constrainAxis else {
+            centerY(to: view)
+                .centerX(to: view)
+            return view
+        }
+        
+        if constrainAxis == .horizontal {
+            view.width(width)
+            self.centerY(to: view)
+        } else {
+            view.height(height)
+            self.centerX(to: view)
+        }
+        
+        return view
+    }
+    
+    @discardableResult
+    func wrapAndCenterKeepingDimensions() -> UIView {
+        let view = UIView()
+        constrained()
+            .addAsSubview(of: view)
+        
+        centerY(to: view)
+            .centerX(to: view)
+        
+        return view
+    }
+    
     
     @discardableResult
     func centered(inView: UIView? = nil) -> Self {
@@ -152,5 +263,117 @@ extension UIView {
     func height(_ constant: CGFloat) -> Self {
         heightAnchor.constraint(equalToConstant: constant).isActive = true
         return self
+    }
+    
+    @discardableResult
+    func leading(to view: UIView, constant: CGFloat = 0) -> Self {
+        leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func trailing(to view: UIView, constant: CGFloat = 0) -> Self {
+        trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func top(toSafeAreaOf view: UIView, constant: CGFloat = 0) -> Self {
+        topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func top(to view: UIView, constant: CGFloat = 0) -> Self {
+        topAnchor.constraint(equalTo: view.topAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func topToBottom(of view: UIView, constant: CGFloat = 0) -> Self {
+        topAnchor.constraint(equalTo: view.bottomAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func bottom(to view: UIView, constant: CGFloat = 0) -> Self {
+        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func bottom(toSafeAreaOf view: UIView, constant: CGFloat = 0) -> Self {
+        bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func bottomToTop(of view: UIView, constant: CGFloat = 0) -> Self {
+        bottomAnchor.constraint(equalTo: view.topAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func centerX(to view: UIView, constant: CGFloat = 0) -> Self {
+        centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func centerY(to view: UIView, constant: CGFloat = 0) -> Self {
+        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func bordered(_ color: UIColor = .separator, borderWidth: CGFloat = 0.5) -> Self {
+        layer.borderColor = color.cgColor
+        layer.borderWidth = borderWidth
+        return self
+    }
+    
+    @discardableResult
+    func unBordered() -> Self {
+        layer.borderColor = UIColor.clear.cgColor
+        layer.borderWidth = 0
+        return self
+    }
+    
+    @discardableResult
+    func tinted(_ color: UIColor) -> Self {
+       tintColor = color
+        return self
+    }
+    
+    @discardableResult
+    func underlined(ofColor: UIColor = .separator) -> Self {
+        UIView.line(ofColor: ofColor).constrained()
+            .addAsSubview(of: self)
+            .pinToBottom(of: self)
+            .height(0.5)
+        return self
+    }
+}
+
+extension Array where Element: UIView {
+    
+    func vStack(alignment: UIStackView.Alignment = .fill,
+                distribution: UIStackView.Distribution = .fill,
+                spacing: CGFloat = UIConstants.spacing) -> UIStackView {
+        return UIStackView.make(views: self,
+                                axis: .vertical,
+                                alignment: alignment,
+                                distribution: distribution,
+                                spacing: spacing)
+    }
+    
+    func hStack(alignment: UIStackView.Alignment = .fill,
+                distribution: UIStackView.Distribution = .fill,
+                spacing: CGFloat = UIConstants.spacing) -> UIStackView {
+        return UIStackView.make(views: self,
+                                axis: .horizontal,
+                                alignment: alignment,
+                                distribution: distribution,
+                                spacing: spacing)
     }
 }

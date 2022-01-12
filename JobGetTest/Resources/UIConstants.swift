@@ -14,4 +14,6 @@ struct UIConstants {
     static let spacingTripe: CGFloat = 24
     static let spacingQuadruple: CGFloat = 32
     static let buttonHeight: CGFloat = 50
+    static let inputHeight: CGFloat = 40
+    static let interactionIcon: CGFloat = 14
 }

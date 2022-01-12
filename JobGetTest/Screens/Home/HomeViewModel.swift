@@ -8,9 +8,12 @@
 import Foundation
 import Combine
 
-protocol HomeCoordinator: Coordinatable {}
+protocol HomeCoordinator: Coordinatable {
+    func presentAddEntryForm()
+}
 protocol HomeViewModel: LoadingNotifier, ViewLoadedListener {
     var transactions: CurrentValueSubject<[TransactionList], Never> { get }
+    func didSelectCreateEntry()
 }
 
 final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
@@ -23,6 +26,10 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
     
     func didFinishLoading() {
         
+    }
+    
+    func didSelectCreateEntry() {
+        coordinator.presentAddEntryForm()
     }
 }
 

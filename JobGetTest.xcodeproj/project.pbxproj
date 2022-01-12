@@ -54,6 +54,18 @@
 		8600E9C5278EC82700EE9C79 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */; };
 		8600E9C7278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */; };
 		8600E9C8278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */; };
+		8600E9CB278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9CA278ECADA00EE9C79 /* AddEntryContracts.swift */; };
+		8600E9CC278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9CA278ECADA00EE9C79 /* AddEntryContracts.swift */; };
+		8600E9CE278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9CD278ECAE300EE9C79 /* AddEntryViewController.swift */; };
+		8600E9CF278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9CD278ECAE300EE9C79 /* AddEntryViewController.swift */; };
+		8600E9D1278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D0278ECAEB00EE9C79 /* AddEntryViewModel.swift */; };
+		8600E9D2278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D0278ECAEB00EE9C79 /* AddEntryViewModel.swift */; };
+		8600E9D4278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D3278ECDEC00EE9C79 /* UILabel+extension.swift */; };
+		8600E9D5278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D3278ECDEC00EE9C79 /* UILabel+extension.swift */; };
+		8600E9D7278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */; };
+		8600E9D8278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */; };
+		8600E9DA278ED33300EE9C79 /* JGDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D9278ED33300EE9C79 /* JGDropDown.swift */; };
+		8600E9DB278ED33300EE9C79 /* JGDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9D9278ED33300EE9C79 /* JGDropDown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +118,12 @@
 		8600E9BF278EC72600EE9C79 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator+Extension.swift"; sourceTree = "<group>"; };
+		8600E9CA278ECADA00EE9C79 /* AddEntryContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryContracts.swift; sourceTree = "<group>"; };
+		8600E9CD278ECAE300EE9C79 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		8600E9D0278ECAEB00EE9C79 /* AddEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewModel.swift; sourceTree = "<group>"; };
+		8600E9D3278ECDEC00EE9C79 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
+		8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		8600E9D9278ED33300EE9C79 /* JGDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGDropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +250,8 @@
 				8600E993278EB6F600EE9C79 /* UIView+Extesnion.swift */,
 				8600E9BC278EC41200EE9C79 /* Collection+Extension.swift */,
 				8600E9C6278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift */,
+				8600E9D3278ECDEC00EE9C79 /* UILabel+extension.swift */,
+				8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,6 +259,7 @@
 		8600E997278EB80200EE9C79 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8600E9C9278ECACA00EE9C79 /* AddEntry */,
 				8600E999278EB83500EE9C79 /* Home */,
 			);
 			path = Screens;
@@ -279,8 +300,19 @@
 			isa = PBXGroup;
 			children = (
 				8600E9C3278EC82700EE9C79 /* LoadingOverlay.swift */,
+				8600E9D9278ED33300EE9C79 /* JGDropDown.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8600E9C9278ECACA00EE9C79 /* AddEntry */ = {
+			isa = PBXGroup;
+			children = (
+				8600E9CA278ECADA00EE9C79 /* AddEntryContracts.swift */,
+				8600E9CD278ECAE300EE9C79 /* AddEntryViewController.swift */,
+				8600E9D0278ECAEB00EE9C79 /* AddEntryViewModel.swift */,
+			);
+			path = AddEntry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,14 +446,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8600E99B278EB84300EE9C79 /* HomeContracts.swift in Sources */,
+				8600E9D7278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */,
 				8600E9A7278EBC8E00EE9C79 /* CoreDataStorage.swift in Sources */,
 				8600E996278EB74100EE9C79 /* AppCoordinator.swift in Sources */,
 				8600E9C7278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
 				8600E9C4278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
 				8600E9A1278EB86E00EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E987278EB54200EE9C79 /* BaseCoordinator.swift in Sources */,
+				8600E9D1278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */,
 				8600E994278EB6F600EE9C79 /* UIView+Extesnion.swift in Sources */,
 				8600E94F278EB28600EE9C79 /* AppDelegate.swift in Sources */,
+				8600E9DA278ED33300EE9C79 /* JGDropDown.swift in Sources */,
 				8600E9BA278EC34A00EE9C79 /* TransactionList.swift in Sources */,
 				8600E989278EB5CC00EE9C79 /* BaseViewModel.swift in Sources */,
 				8600E9BD278EC41200EE9C79 /* Collection+Extension.swift in Sources */,
@@ -431,11 +466,14 @@
 				8600E9A5278EBAB100EE9C79 /* ServiceRegistry.swift in Sources */,
 				8600E98F278EB61B00EE9C79 /* Log.swift in Sources */,
 				8600E9B6278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */,
+				8600E9CE278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */,
 				8600E991278EB66000EE9C79 /* LoadingNotifier.swift in Sources */,
 				8600E9C0278EC72700EE9C79 /* UIConstants.swift in Sources */,
 				8600E99D278EB84900EE9C79 /* HomeViewController.swift in Sources */,
 				8600E951278EB28600EE9C79 /* SceneDelegate.swift in Sources */,
+				8600E9CB278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */,
 				8600E9A3278EBA2B00EE9C79 /* ViewLoadedListener.swift in Sources */,
+				8600E9D4278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,17 +489,23 @@
 				8600E9B7278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */,
 				8600E9B1278EC22500EE9C79 /* ViewLoadedListener.swift in Sources */,
 				8600E9A8278EC20700EE9C79 /* CoreDataStorage.swift in Sources */,
+				8600E9D8278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */,
+				8600E9D5278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
 				8600E969278EB28700EE9C79 /* JobGetTestTests.swift in Sources */,
 				8600E9C5278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
 				8600E9B0278EC22100EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E98C278EB5D600EE9C79 /* Coordinatable.swift in Sources */,
 				8600E9C1278EC72700EE9C79 /* UIConstants.swift in Sources */,
+				8600E9CC278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */,
 				8600E9BE278EC41200EE9C79 /* Collection+Extension.swift in Sources */,
+				8600E9CF278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */,
 				8600E9C8278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
 				8600E98B278EB5D400EE9C79 /* BaseCoordinator.swift in Sources */,
 				8600E9AD278EC22100EE9C79 /* HomeViewController.swift in Sources */,
+				8600E9DB278ED33300EE9C79 /* JGDropDown.swift in Sources */,
 				8600E98A278EB5D000EE9C79 /* BaseViewModel.swift in Sources */,
 				8600E9AC278EC21800EE9C79 /* Log.swift in Sources */,
+				8600E9D2278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */,
 				8600E9AA278EC20E00EE9C79 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

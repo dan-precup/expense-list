@@ -42,6 +42,9 @@ final class HomeViewController: UIViewController {
         view.background(.systemGroupedBackground)
         tableView.addAndPinAsSubview(of: view)
         loadingOverlay.addAsSubview(of: view)
+        title = "Transactions"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didSelectCreateEntry))
     }
     
     private func setupBindings() {
@@ -52,6 +55,10 @@ final class HomeViewController: UIViewController {
                 self?.tableView.reloadData()
             }).store(in: &bag)
         loadingOverlay.bindLoadingAnimator(viewModel, storedIn: &bag)
+    }
+    
+    @objc private func didSelectCreateEntry() {
+        viewModel.didSelectCreateEntry()
     }
 }
 
