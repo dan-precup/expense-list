@@ -36,6 +36,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupBindings()
+        viewModel.didFinishLoading()
     }
     
     private func setupUI() {

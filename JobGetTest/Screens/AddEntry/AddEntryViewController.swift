@@ -26,6 +26,8 @@ final class AddEntryViewController: UIViewController {
     private let titleLabel = UILabel.title(Constants.titleString)
     private let addButton = UIButton(configuration: .filled(), primaryAction: nil)
     private let amountStepper = UIStepper()
+    private let closeButton = UIButton()
+
     private lazy var transactionTypeDropDown = JGDropDown(options: viewModel.transactionTypeOptions, title: Constants.transactionTypeTitle)
 
     init(viewModel: AddEntryViewModel) {
@@ -46,17 +48,32 @@ final class AddEntryViewController: UIViewController {
     
     private func setupUI() {
         view.background(.black.withAlphaComponent(0.4))
+       
         contentView.addAsSubview(of: view)
             .constrained()
             .pinHorizontaly(to: view, padding: UIConstants.spacingDouble)
             .background(.systemBackground)
             .centerY(to: view)
             .rounded()
-        
+
         addButton.setTitle(Constants.addButtonString, for: .normal)
+        addButton.addTarget(self, action: #selector(didSelectAdd), for: .touchUpInside)
         
         transactionTypeDropDown.delegate = viewModel
         
+        [titleLabel, transactionTypeDropDown, transactionDescriptionTextfield, setupAmountFields(), addButton]
+            .vStack(spacing: UIConstants.spacingDouble)
+            .addAndPinAsSubview(of: contentView, padding: UIConstants.spacingDouble)
+        
+       
+
+        transactionDescriptionTextfield.textField.delegate = self
+        transactionDescriptionTextfield.textField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
+
+        setupCloseMethods()
+    }
+    
+    private func setupAmountFields() -> UIView {
         let amountView = [
             amountTextfield,
             amountStepper.wrapAndPinToBottom()
@@ -65,16 +82,25 @@ final class AddEntryViewController: UIViewController {
         amountStepper.addTarget(self, action: #selector(didChangeStepperAmount), for: .valueChanged)
         amountStepper.maximumValue = Double.greatestFiniteMagnitude
         amountStepper.minimumValue = -Double.greatestFiniteMagnitude
-
-        [titleLabel, transactionTypeDropDown, transactionDescriptionTextfield, amountView, addButton].vStack(spacing: UIConstants.spacingDouble)
-            .addAndPinAsSubview(of: contentView, padding: UIConstants.spacingDouble)
-        
         amountTextfield.setLeftViewText("$")
         amountTextfield.textField.keyboardType = .decimalPad
         amountTextfield.textField.delegate = self
-
-        transactionDescriptionTextfield.textField.delegate = self
-        transactionDescriptionTextfield.textField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
+        return amountView
+    }
+    
+    private func setupCloseMethods() {
+        closeButton.addTarget(self, action: #selector(didSelectClose), for: .touchUpInside)
+        closeButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        closeButton.addAsSubview(of: contentView)
+            .constrained()
+            .trailing(to: contentView, constant: -UIConstants.spacingDouble)
+            .top(to: contentView, constant: UIConstants.spacingDouble)
+            .tinted(.tertiaryLabel)
+        let closeView = UIView()
+        closeView.addAndPinAsSubview(of: view)
+        view.sendSubviewToBack(closeView)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didSelectClose))
+        closeView.addGestureRecognizer(tapGesture)
     }
     
     private func setupBindings() {
@@ -98,6 +124,13 @@ final class AddEntryViewController: UIViewController {
         amountTextfield.textField.text = viewModel.transactionAmount.value.asString
     }
 
+    @objc private func didSelectAdd() {
+        viewModel.didSelectCreateEntity()
+    }
+    
+    @objc private func didSelectClose() {
+        viewModel.didSelectClose()
+    }
 }
 
 extension AddEntryViewController: UITextFieldDelegate {

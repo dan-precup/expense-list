@@ -8,7 +8,10 @@
 import Combine
 import Foundation
 
-protocol AddEntryCoordinator: Coordinatable {}
+protocol AddEntryDelegate: AnyObject {
+    func didCreateNewEntry()
+}
+
 protocol AddEntryViewModel: LoadingNotifier, JGDropDownDelegate, ViewLoadedListener {
     var transactionTypeOptions: [String] { get }
     var ctaEnabled: CurrentValueSubject<Bool, Never> { get }
@@ -18,6 +21,7 @@ protocol AddEntryViewModel: LoadingNotifier, JGDropDownDelegate, ViewLoadedListe
     func didChangeAmount(to: String?)
     func didChangeDescription(to: String?)
     func didSelectCreateEntity()
+    func didSelectClose()
 }
 
 enum TransactionType: Int, CaseIterable {
@@ -34,14 +38,19 @@ enum TransactionType: Int, CaseIterable {
 
 final class AddEntryViewModelImpl: BaseViewModel, AddEntryViewModel {
     var transactionTypeOptions: [String] = TransactionType.allCases.map({ $0.title })
-    private let coordinator: AddEntryCoordinator
+    private let coordinator: Coordinatable
     
+    weak var delegate: AddEntryDelegate?
     var transactionType: TransactionType = .expense
     let transactionDescription = CurrentValueSubject<String, Never>("")
     let transactionAmount = CurrentValueSubject<Double, Never>(0)
     let ctaEnabled = CurrentValueSubject<Bool, Never>(false)
-    init(coordinator: AddEntryCoordinator) {
+    private let transactionService: TransactionService
+
+    init(coordinator: Coordinatable,
+         transactionService: TransactionService = ServiceRegistry.shared.transactionService) {
         self.coordinator = coordinator
+        self.transactionService = transactionService
         super.init()
     }
     
@@ -71,7 +80,16 @@ final class AddEntryViewModelImpl: BaseViewModel, AddEntryViewModel {
     
     func didSelectCreateEntity() {
         guard ctaEnabled.value else { return }
-        
+        transactionService.create(name: transactionDescription.value,
+                                  amount: transactionAmount.value,
+                                  type: transactionType)
+        coordinator.dismiss(completion: { [weak self] in
+            self?.delegate?.didCreateNewEntry()
+        })
+    }
+    
+    func didSelectClose() {
+        coordinator.dismiss()
     }
 }
 

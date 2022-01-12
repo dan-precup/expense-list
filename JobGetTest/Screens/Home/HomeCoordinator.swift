@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class HomeCoordinatorImpl: BaseCoordinator, HomeCoordinator, AddEntryCoordinator {
+final class HomeCoordinatorImpl: BaseCoordinator, HomeCoordinator {
     
     func start() {
         let viewModel = HomeViewModelImpl(coordinator: self)
@@ -15,8 +15,9 @@ final class HomeCoordinatorImpl: BaseCoordinator, HomeCoordinator, AddEntryCoord
         setController(viewController)
     }
     
-    func presentAddEntryForm() {
+    func presentAddEntryForm(delegate: AddEntryDelegate?) {
         let viewModel = AddEntryViewModelImpl(coordinator: self)
+        viewModel.delegate = delegate
         let viewController = AddEntryViewController(viewModel: viewModel)
         present(viewController, presentationStyle: .overCurrentContext)
     }

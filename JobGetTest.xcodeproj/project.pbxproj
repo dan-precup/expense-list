@@ -71,6 +71,8 @@
 		8600E9E0278EE7DB00EE9C79 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */; };
 		8600E9E1278EE7DB00EE9C79 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */; };
 		8632769D278EEBE8005D40F9 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */; };
+		8632769F278EF854005D40F9 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632769E278EF854005D40F9 /* TransactionService.swift */; };
+		863276A1278EFC48005D40F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A0278EFC48005D40F9 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,8 @@
 		8600E9DC278EE04700EE9C79 /* TitledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTextField.swift; sourceTree = "<group>"; };
 		8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extension.swift"; sourceTree = "<group>"; };
+		8632769E278EF854005D40F9 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		863276A0278EFC48005D40F9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,8 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				8600E98E278EB61B00EE9C79 /* Log.swift */,
-				8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */,
 				8600E9A6278EBC8E00EE9C79 /* CoreDataStorage.swift */,
+				8632769E278EF854005D40F9 /* TransactionService.swift */,
+				8600E9A4278EBAB100EE9C79 /* ServiceRegistry.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				8600E9D6278ECF4800EE9C79 /* UIStackView+Extension.swift */,
 				8600E9DF278EE7DB00EE9C79 /* Double+Extension.swift */,
 				8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */,
+				863276A0278EFC48005D40F9 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -462,8 +468,10 @@
 				8600E996278EB74100EE9C79 /* AppCoordinator.swift in Sources */,
 				8600E9C7278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
 				8600E9C4278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
+				8632769F278EF854005D40F9 /* TransactionService.swift in Sources */,
 				8600E9E0278EE7DB00EE9C79 /* Double+Extension.swift in Sources */,
 				8600E9A1278EB86E00EE9C79 /* HomeCoordinator.swift in Sources */,
+				863276A1278EFC48005D40F9 /* Date+Extension.swift in Sources */,
 				8600E987278EB54200EE9C79 /* BaseCoordinator.swift in Sources */,
 				8600E9D1278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */,
 				8600E994278EB6F600EE9C79 /* UIView+Extesnion.swift in Sources */,
