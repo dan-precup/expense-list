@@ -51,8 +51,9 @@ final class HomeViewController: UIViewController {
         viewModel.transactions
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] newTrasactions in
-                self?.transactions = newTrasactions
-                self?.tableView.reloadData()
+                guard let self = self else { return }
+                self.transactions = newTrasactions
+                UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData() })
             }).store(in: &bag)
         loadingOverlay.bindLoadingAnimator(viewModel, storedIn: &bag)
     }
@@ -85,4 +86,18 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
 }
-extension HomeViewController: UITableViewDelegate {}
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            guard let transaction = transactions[safe: indexPath.section]?.transactions[indexPath.row] else { return nil }
+            
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] ( _, _, completionHandler) in
+                self?.viewModel.deleteEntry(transaction)
+                completionHandler(true)
+            }
+            deleteAction.image = UIImage(systemName: "trash")
+            deleteAction.backgroundColor = .systemRed
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return configuration
+    }
+}

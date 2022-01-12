@@ -49,7 +49,7 @@ final class TransactionServiceImpl: TransactionService {
     }
     
     func deleteTransaction(_ transaction: Transaction) {
-        guard let context = storage.getContext() else { return }
+        guard let context = storage.getReadContext() else { return }
         context.delete(transaction)
         storage.saveContext(context)
     }

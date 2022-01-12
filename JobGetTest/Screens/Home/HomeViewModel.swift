@@ -14,6 +14,7 @@ protocol HomeCoordinator: Coordinatable {
 protocol HomeViewModel: LoadingNotifier, ViewLoadedListener {
     var transactions: CurrentValueSubject<[TransactionList], Never> { get }
     func didSelectCreateEntry()
+    func deleteEntry(_ transaction: Transaction)
 }
 
 final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
@@ -36,6 +37,13 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
     
     func didSelectCreateEntry() {
         coordinator.presentAddEntryForm(delegate: self)
+    }
+    
+    func deleteEntry(_ transaction: Transaction) {
+        isLoading.value = true
+        transactionService.deleteTransaction(transaction)
+        reloadData()
+        isLoading.value = false
     }
     
     private func reloadData() {
