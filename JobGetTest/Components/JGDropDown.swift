@@ -32,7 +32,7 @@ final class JGDropDown: UIView {
     
     private func setupUI() {
         titleLabel.text = title
-        chevronImage.tinted(.separator)
+        chevronImage.tinted(.label)
             .dimensions(width: UIConstants.interactionIcon, height: UIConstants.interactionIcon)
         let imageWrapper = chevronImage.wrapAndCenterKeepingDimensions()
             .minHeight(UIConstants.interactionIcon)

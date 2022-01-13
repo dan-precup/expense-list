@@ -70,10 +70,11 @@ final class AddEntryViewController: UIViewController {
         addButton.addTarget(self, action: #selector(didSelectAdd), for: .touchUpInside)
         
         transactionTypeDropDown.delegate = viewModel
-        
-        [titleLabel, transactionTypeDropDown, transactionDescriptionTextfield, setupAmountFields(), addButton]
-            .vStack(spacing: UIConstants.spacingDouble)
+        let amountFieldsWrapper = setupAmountFields()
+        let contentStack = [titleLabel, transactionTypeDropDown, transactionDescriptionTextfield, amountFieldsWrapper, addButton]
+            .vStack(spacing: UIConstants.spacing)
             .addAndPinAsSubview(of: contentView, padding: UIConstants.spacingDouble)
+        contentStack.setCustomSpacing(UIConstants.spacingDouble, after: amountFieldsWrapper)
 
         transactionDescriptionTextfield.textField.delegate = self
         transactionDescriptionTextfield.textField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
@@ -88,7 +89,7 @@ final class AddEntryViewController: UIViewController {
             .constrained()
             .pinHorizontaly(to: view, padding: UIConstants.spacingDouble)
             .background(.systemBackground)
-            .centerY(to: view)
+            .centerY(to: view, constant: -view.frame.height * 0.05)
             .rounded()
     }
     
