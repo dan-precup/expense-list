@@ -17,6 +17,6 @@ protocol HomeViewModel: LoadingNotifier, ViewLoadedListener {
     var expenses: Double { get }
     var total: Double { get }
     func didSelectCreateEntry()
-    func deleteEntry(_ transaction: Transaction)
+    func deleteEntry(_ transaction: SingleTransaction)
     func didSelectRefreshData()
 }

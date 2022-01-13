@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
     private let totalsCell = "totalsCell"
     private var transactions = [TransactionList]()
     private var bag = Set<AnyCancellable>()
-    private let fabAddButton = UIButton()
+    private let fabAddButton = UIButton().identifier("fabAddButton")
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.register(HomeTransactionCell.self, forCellReuseIdentifier: transactionCellId)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TransactionType: Int, CaseIterable {
+enum TransactionType: Int32, CaseIterable {
     case expense
     case income
     

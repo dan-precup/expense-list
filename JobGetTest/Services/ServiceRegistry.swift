@@ -17,5 +17,13 @@ final class ServiceRegistry {
     let localStorage: LocalStorageService = CoreDataStorage()
     
     /// Transactions service
-    lazy var transactionService: TransactionService = TransactionServiceImpl.shared
+    lazy var transactionService: TransactionService =  {
+        if ProcessInfo.processInfo.arguments.contains("testMode") {
+            let service = TransactionServiceMock.shared
+            service.setMockFlags(TransactionMockFlag.extractListFromStrings(ProcessInfo.processInfo.arguments))
+            return TransactionServiceMock.shared
+        } else {
+            return TransactionServiceImpl.shared
+        }
+    }()
 }

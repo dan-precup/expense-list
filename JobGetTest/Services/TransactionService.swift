@@ -8,12 +8,6 @@
 import CoreData
 import Foundation
 
-protocol TransactionService {
-    func create(name: String, amount: Double, type: TransactionType)
-    func getTransactions() -> [Transaction]
-    func deleteTransaction(_ transaction: Transaction)
-}
-
 final class TransactionServiceImpl: TransactionService {
     
     /// Singleton instance
@@ -44,13 +38,13 @@ final class TransactionServiceImpl: TransactionService {
     
     /// Get the transaction list
     /// - Returns: A transactions array
-    func getTransactions() -> [Transaction] {
+    func getTransactions() -> [SingleTransaction] {
         guard let context = storage.getMainContext() else { return [] }
         let fetchRequest = NSFetchRequest<Transaction>(entityName: "Transaction")
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
-            return try context.fetch(fetchRequest) as [Transaction]
+            return (try context.fetch(fetchRequest) as [Transaction]).map({SingleTransaction.from(transaction: $0)})
         } catch {
             Log.error("Cannot get transactions" ,error)
         }
@@ -59,8 +53,8 @@ final class TransactionServiceImpl: TransactionService {
     
     /// Delete a transaction
     /// - Parameter transaction: The transaction to delete
-    func deleteTransaction(_ transaction: Transaction) {
-        guard let context = storage.getMainContext() else { return }
+    func deleteTransaction(_ transaction: SingleTransaction) {
+        guard let transaction = transaction.transaction, let context = storage.getMainContext() else { return }
         context.delete(transaction)
         storage.saveContext(context)
     }

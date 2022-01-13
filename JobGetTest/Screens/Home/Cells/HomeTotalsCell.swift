@@ -19,14 +19,14 @@ final class HomeTotalsCell: UITableViewCell {
         static let cleanSlateDescr = "Clean slate - no expenses, no problems."
 
     }
-    private lazy var expensesTitleLabel = makeLabel(text: Constants.expensesLabelTitle, isValueLabel: false)
-    private lazy var expensesValueLabel = makeLabel(text: "$0.00", isValueLabel: true)
-    private lazy var incomeTitleLabel = makeLabel(text: Constants.incomeLabelTitle, isValueLabel: false)
-    private lazy var incomeValueLabel = makeLabel(text: "$0.00", isValueLabel: true)
-    private lazy var balanceTitleLabel = makeLabel(text: Constants.balanceLabelTitle, isValueLabel: false)
-    private lazy var balanceValueLabel = makeLabel(text: "$0.00", isValueLabel: true)
-    private let progressView = UIProgressView()
-    private let expensesRatioLabel = UILabel.make(size: Constants.expensesRatioFontSize, color: .secondaryLabel, numberOfLines: 2)
+    private lazy var expensesTitleLabel = makeLabel(text: Constants.expensesLabelTitle, isValueLabel: false, identifier: "expensesTitleLabel")
+    private lazy var expensesValueLabel = makeLabel(text: "$0.00", isValueLabel: true, identifier: "expensesValueLabel")
+    private lazy var incomeTitleLabel = makeLabel(text: Constants.incomeLabelTitle, isValueLabel: false, identifier: "incomeTitleLabel")
+    private lazy var incomeValueLabel = makeLabel(text: "$0.00", isValueLabel: true, identifier: "incomeValueLabel")
+    private lazy var balanceTitleLabel = makeLabel(text: Constants.balanceLabelTitle, isValueLabel: false, identifier: "balanceTitleLabel")
+    private lazy var balanceValueLabel = makeLabel(text: "$0.00", isValueLabel: true, identifier: "balanceValueLabel")
+    private let progressView = UIProgressView().identifier("progressView")
+    private let expensesRatioLabel = UILabel.make(size: Constants.expensesRatioFontSize, color: .secondaryLabel, numberOfLines: 2).identifier("expensesRatioLabel")
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -107,13 +107,16 @@ final class HomeTotalsCell: UITableViewCell {
     /// - Parameters:
     ///   - text: The text if any
     ///   - isValueLabel: If it's a amount label
+    ///   - identififer: The string id
     /// - Returns: The label
-    private func makeLabel(text: String = "", isValueLabel: Bool) -> UILabel {
+    private func makeLabel(text: String = "", isValueLabel: Bool, identifier: String) -> UILabel {
         UILabel.make(text,
                      weight: isValueLabel ? .semibold : .regular,
                      size: 16,
                      color: isValueLabel ? .label : .secondaryLabel,
                      numberOfLines: 1)
-            .textCentered().shrinkToFit()
+            .textCentered()
+            .shrinkToFit()
+            .identifier(identifier)
     }
 }

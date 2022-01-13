@@ -30,6 +30,12 @@ final class TitltedTextField: UIView {
         textField.leftViewMode = .always
     }
     
+    override func identifier(_ id: String) -> Self {
+        super.identifier(id)
+        textField.identifier(id+"TextField")
+        return self
+    }
+    
     private func setupUI() {
         [titleLabel,
          textField.height(UIConstants.inputHeight)]

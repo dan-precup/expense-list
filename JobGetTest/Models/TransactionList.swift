@@ -10,5 +10,5 @@ import Foundation
 /// Date grouping model for transactions
 struct TransactionList {
     let date: Date
-    var transactions: [Transaction]
+    var transactions: [SingleTransaction]
 }

@@ -34,7 +34,7 @@ final class AddEntryViewModelImpl: BaseViewModel, AddEntryViewModel {
     }
     
     func dropDown(_ dropdown: JGDropDown, didSelectOption atIndex: Int) {
-        transactionType = TransactionType(rawValue: atIndex) ?? .expense
+        transactionType = TransactionType(rawValue: Int32(atIndex)) ?? .expense
     }
     
     func didChangeAmount(to newAmount: String?) {

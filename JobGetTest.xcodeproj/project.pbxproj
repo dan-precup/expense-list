@@ -12,9 +12,6 @@
 		8600E959278EB28600EE9C79 /* JobGetTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8600E957278EB28600EE9C79 /* JobGetTest.xcdatamodeld */; };
 		8600E95B278EB28600EE9C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8600E95A278EB28600EE9C79 /* Assets.xcassets */; };
 		8600E95E278EB28600EE9C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8600E95C278EB28600EE9C79 /* LaunchScreen.storyboard */; };
-		8600E969278EB28700EE9C79 /* JobGetTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E968278EB28700EE9C79 /* JobGetTestTests.swift */; };
-		8600E973278EB28700EE9C79 /* JobGetTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E972278EB28700EE9C79 /* JobGetTestUITests.swift */; };
-		8600E975278EB28700EE9C79 /* JobGetTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E974278EB28700EE9C79 /* JobGetTestUITestsLaunchTests.swift */; };
 		8600E984278EB50800EE9C79 /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E983278EB50800EE9C79 /* Coordinatable.swift */; };
 		8600E987278EB54200EE9C79 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E986278EB54200EE9C79 /* BaseCoordinator.swift */; };
 		8600E989278EB5CC00EE9C79 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E988278EB5CC00EE9C79 /* BaseViewModel.swift */; };
@@ -83,6 +80,37 @@
 		863276B12790170D005D40F9 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AF2790170D005D40F9 /* TransactionType.swift */; };
 		863276B3279021EC005D40F9 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B2279021EC005D40F9 /* UITableView+Extension.swift */; };
 		863276B4279021EC005D40F9 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B2279021EC005D40F9 /* UITableView+Extension.swift */; };
+		863276B8279029CC005D40F9 /* TransactionServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B6279029CC005D40F9 /* TransactionServiceMock.swift */; };
+		863276BA27902B28005D40F9 /* SingleTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B927902B28005D40F9 /* SingleTransaction.swift */; };
+		863276BB27902B28005D40F9 /* SingleTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B927902B28005D40F9 /* SingleTransaction.swift */; };
+		863276BD27902E50005D40F9 /* AddEntryViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276BC27902E50005D40F9 /* AddEntryViewModelTest.swift */; };
+		863276C027902E68005D40F9 /* MockCoordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276BE27902E68005D40F9 /* MockCoordinatable.swift */; };
+		863276C127902F43005D40F9 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632769E278EF854005D40F9 /* TransactionService.swift */; };
+		863276C227902F57005D40F9 /* NumberFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8632769C278EEBE8005D40F9 /* NumberFormatter+Extension.swift */; };
+		863276C327902F63005D40F9 /* UIView+Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8600E993278EB6F600EE9C79 /* UIView+Extesnion.swift */; };
+		863276C427902F6A005D40F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A0278EFC48005D40F9 /* Date+Extension.swift */; };
+		863276C527902F88005D40F9 /* JobGetTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8600E957278EB28600EE9C79 /* JobGetTest.xcdatamodeld */; };
+		863276C827903414005D40F9 /* XCTest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276C627903414005D40F9 /* XCTest+Extension.swift */; };
+		863276CA2790388C005D40F9 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276C92790388C005D40F9 /* HomeViewModelTests.swift */; };
+		863276CD279038C6005D40F9 /* MockHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276CB279038C6005D40F9 /* MockHomeCoordinator.swift */; };
+		863276CF27903BF4005D40F9 /* HomeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276CE27903BF4005D40F9 /* HomeViewUITests.swift */; };
+		863276D027903C10005D40F9 /* TransactionServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B6279029CC005D40F9 /* TransactionServiceMock.swift */; };
+		863276D527903D1C005D40F9 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276D427903D1C005D40F9 /* XCTestCase+Extension.swift */; };
+		863276D627903EC6005D40F9 /* TransactionServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B6279029CC005D40F9 /* TransactionServiceMock.swift */; };
+		863276D727903F56005D40F9 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AF2790170D005D40F9 /* TransactionType.swift */; };
+		863276D827903F95005D40F9 /* SingleTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B927902B28005D40F9 /* SingleTransaction.swift */; };
+		863276D927903FA4005D40F9 /* JobGetTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8600E957278EB28600EE9C79 /* JobGetTest.xcdatamodeld */; };
+		863276DC27903FD3005D40F9 /* TransactionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276DB27903FD3005D40F9 /* TransactionServiceProtocol.swift */; };
+		863276DD27903FDF005D40F9 /* TransactionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276DB27903FD3005D40F9 /* TransactionServiceProtocol.swift */; };
+		863276DE27903FE0005D40F9 /* TransactionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276DB27903FD3005D40F9 /* TransactionServiceProtocol.swift */; };
+		86AE3FF32790407900F9EC4B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A0278EFC48005D40F9 /* Date+Extension.swift */; };
+		86AE3FFB2790480D00F9EC4B /* XCUITest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE3FF42790480D00F9EC4B /* XCUITest+Extension.swift */; };
+		86AE3FFC2790480D00F9EC4B /* XCUIElementQuery+Extenision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE3FF52790480D00F9EC4B /* XCUIElementQuery+Extenision.swift */; };
+		86AE3FFE2790480D00F9EC4B /* XCUIElementTypeQueryProvider+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE3FF72790480D00F9EC4B /* XCUIElementTypeQueryProvider+Extension.swift */; };
+		86AE3FFF2790480D00F9EC4B /* XCUIElement+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE3FF82790480D00F9EC4B /* XCUIElement+Extension.swift */; };
+		86AE40002790480D00F9EC4B /* XCUIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE3FF92790480D00F9EC4B /* XCUIApplication+Extension.swift */; };
+		86AE40012790480D00F9EC4B /* TimeInterval+Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE3FFA2790480D00F9EC4B /* TimeInterval+Timeout.swift */; };
+		86AE40042790540400F9EC4B /* AddTransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE40032790540400F9EC4B /* AddTransactionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,10 +139,7 @@
 		8600E95D278EB28600EE9C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8600E95F278EB28600EE9C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8600E964278EB28700EE9C79 /* JobGetTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobGetTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8600E968278EB28700EE9C79 /* JobGetTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobGetTestTests.swift; sourceTree = "<group>"; };
 		8600E96E278EB28700EE9C79 /* JobGetTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobGetTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8600E972278EB28700EE9C79 /* JobGetTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobGetTestUITests.swift; sourceTree = "<group>"; };
-		8600E974278EB28700EE9C79 /* JobGetTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobGetTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8600E983278EB50800EE9C79 /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		8600E986278EB54200EE9C79 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		8600E988278EB5CC00EE9C79 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
@@ -151,6 +176,23 @@
 		863276AB27900658005D40F9 /* HomeTotalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTotalsCell.swift; sourceTree = "<group>"; };
 		863276AF2790170D005D40F9 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		863276B2279021EC005D40F9 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		863276B6279029CC005D40F9 /* TransactionServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceMock.swift; sourceTree = "<group>"; };
+		863276B927902B28005D40F9 /* SingleTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTransaction.swift; sourceTree = "<group>"; };
+		863276BC27902E50005D40F9 /* AddEntryViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewModelTest.swift; sourceTree = "<group>"; };
+		863276BE27902E68005D40F9 /* MockCoordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinatable.swift; sourceTree = "<group>"; };
+		863276C627903414005D40F9 /* XCTest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Extension.swift"; sourceTree = "<group>"; };
+		863276C92790388C005D40F9 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		863276CB279038C6005D40F9 /* MockHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeCoordinator.swift; sourceTree = "<group>"; };
+		863276CE27903BF4005D40F9 /* HomeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewUITests.swift; sourceTree = "<group>"; };
+		863276D427903D1C005D40F9 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		863276DB27903FD3005D40F9 /* TransactionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceProtocol.swift; sourceTree = "<group>"; };
+		86AE3FF42790480D00F9EC4B /* XCUITest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUITest+Extension.swift"; sourceTree = "<group>"; };
+		86AE3FF52790480D00F9EC4B /* XCUIElementQuery+Extenision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementQuery+Extenision.swift"; sourceTree = "<group>"; };
+		86AE3FF72790480D00F9EC4B /* XCUIElementTypeQueryProvider+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElementTypeQueryProvider+Extension.swift"; sourceTree = "<group>"; };
+		86AE3FF82790480D00F9EC4B /* XCUIElement+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extension.swift"; sourceTree = "<group>"; };
+		86AE3FF92790480D00F9EC4B /* XCUIApplication+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+Extension.swift"; sourceTree = "<group>"; };
+		86AE3FFA2790480D00F9EC4B /* TimeInterval+Timeout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Timeout.swift"; sourceTree = "<group>"; };
+		86AE40032790540400F9EC4B /* AddTransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +260,10 @@
 		8600E967278EB28700EE9C79 /* JobGetTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				8600E968278EB28700EE9C79 /* JobGetTestTests.swift */,
+				863276B5279029BE005D40F9 /* Mocks */,
+				863276BC27902E50005D40F9 /* AddEntryViewModelTest.swift */,
+				863276C92790388C005D40F9 /* HomeViewModelTests.swift */,
+				863276C627903414005D40F9 /* XCTest+Extension.swift */,
 			);
 			path = JobGetTestTests;
 			sourceTree = "<group>";
@@ -226,8 +271,10 @@
 		8600E971278EB28700EE9C79 /* JobGetTestUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8600E972278EB28700EE9C79 /* JobGetTestUITests.swift */,
-				8600E974278EB28700EE9C79 /* JobGetTestUITestsLaunchTests.swift */,
+				86AE40022790481500F9EC4B /* Extensions */,
+				86AE3FF42790480D00F9EC4B /* XCUITest+Extension.swift */,
+				863276CE27903BF4005D40F9 /* HomeViewUITests.swift */,
+				86AE40032790540400F9EC4B /* AddTransactionTests.swift */,
 			);
 			path = JobGetTestUITests;
 			sourceTree = "<group>";
@@ -248,6 +295,7 @@
 				8600E983278EB50800EE9C79 /* Coordinatable.swift */,
 				8600E990278EB66000EE9C79 /* LoadingNotifier.swift */,
 				8600E9A2278EBA2B00EE9C79 /* ViewLoadedListener.swift */,
+				863276DB27903FD3005D40F9 /* TransactionServiceProtocol.swift */,
 			);
 			path = Contracts;
 			sourceTree = "<group>";
@@ -327,6 +375,7 @@
 			children = (
 				8600E9B9278EC34A00EE9C79 /* TransactionList.swift */,
 				863276AF2790170D005D40F9 /* TransactionType.swift */,
+				863276B927902B28005D40F9 /* SingleTransaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,6 +407,29 @@
 				863276AB27900658005D40F9 /* HomeTotalsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		863276B5279029BE005D40F9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				863276B6279029CC005D40F9 /* TransactionServiceMock.swift */,
+				863276BE27902E68005D40F9 /* MockCoordinatable.swift */,
+				863276CB279038C6005D40F9 /* MockHomeCoordinator.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		86AE40022790481500F9EC4B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				863276D427903D1C005D40F9 /* XCTestCase+Extension.swift */,
+				86AE3FFA2790480D00F9EC4B /* TimeInterval+Timeout.swift */,
+				86AE3FF92790480D00F9EC4B /* XCUIApplication+Extension.swift */,
+				86AE3FF82790480D00F9EC4B /* XCUIElement+Extension.swift */,
+				86AE3FF52790480D00F9EC4B /* XCUIElementQuery+Extenision.swift */,
+				86AE3FF72790480D00F9EC4B /* XCUIElementTypeQueryProvider+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,10 +588,13 @@
 				8600E9A5278EBAB100EE9C79 /* ServiceRegistry.swift in Sources */,
 				8600E98F278EB61B00EE9C79 /* Log.swift in Sources */,
 				8600E9B6278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */,
+				863276BA27902B28005D40F9 /* SingleTransaction.swift in Sources */,
 				8600E9CE278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */,
 				8600E991278EB66000EE9C79 /* LoadingNotifier.swift in Sources */,
 				8600E9C0278EC72700EE9C79 /* UIConstants.swift in Sources */,
+				863276DC27903FD3005D40F9 /* TransactionServiceProtocol.swift in Sources */,
 				8600E99D278EB84900EE9C79 /* HomeViewController.swift in Sources */,
+				863276D027903C10005D40F9 /* TransactionServiceMock.swift in Sources */,
 				8600E951278EB28600EE9C79 /* SceneDelegate.swift in Sources */,
 				8600E9CB278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */,
 				863276B02790170D005D40F9 /* TransactionType.swift in Sources */,
@@ -538,6 +613,7 @@
 			files = (
 				8600E9B2278EC22500EE9C79 /* LoadingNotifier.swift in Sources */,
 				8600E9AE278EC22100EE9C79 /* HomeContracts.swift in Sources */,
+				863276C327902F63005D40F9 /* UIView+Extesnion.swift in Sources */,
 				8600E9BB278EC34A00EE9C79 /* TransactionList.swift in Sources */,
 				8600E9AF278EC22100EE9C79 /* HomeViewModel.swift in Sources */,
 				863276AD27900658005D40F9 /* HomeTotalsCell.swift in Sources */,
@@ -546,28 +622,39 @@
 				8600E9B1278EC22500EE9C79 /* ViewLoadedListener.swift in Sources */,
 				8600E9A8278EC20700EE9C79 /* CoreDataStorage.swift in Sources */,
 				8600E9D8278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */,
+				863276CA2790388C005D40F9 /* HomeViewModelTests.swift in Sources */,
 				8600E9DE278EE04700EE9C79 /* TitledTextField.swift in Sources */,
+				863276C827903414005D40F9 /* XCTest+Extension.swift in Sources */,
+				863276C427902F6A005D40F9 /* Date+Extension.swift in Sources */,
 				863276B4279021EC005D40F9 /* UITableView+Extension.swift in Sources */,
 				8600E9D5278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
-				8600E969278EB28700EE9C79 /* JobGetTestTests.swift in Sources */,
 				8600E9C5278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
 				8600E9B0278EC22100EE9C79 /* HomeCoordinator.swift in Sources */,
 				8600E98C278EB5D600EE9C79 /* Coordinatable.swift in Sources */,
 				8600E9C1278EC72700EE9C79 /* UIConstants.swift in Sources */,
+				863276C027902E68005D40F9 /* MockCoordinatable.swift in Sources */,
 				863276A7278F287B005D40F9 /* Transaction+Extension.swift in Sources */,
+				863276C227902F57005D40F9 /* NumberFormatter+Extension.swift in Sources */,
 				8600E9E1278EE7DB00EE9C79 /* Double+Extension.swift in Sources */,
 				8600E9CC278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */,
+				863276BB27902B28005D40F9 /* SingleTransaction.swift in Sources */,
 				8600E9BE278EC41200EE9C79 /* Collection+Extension.swift in Sources */,
+				863276B8279029CC005D40F9 /* TransactionServiceMock.swift in Sources */,
 				8600E9CF278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */,
+				863276C127902F43005D40F9 /* TransactionService.swift in Sources */,
+				863276C527902F88005D40F9 /* JobGetTest.xcdatamodeld in Sources */,
 				8600E9C8278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
+				863276DD27903FDF005D40F9 /* TransactionServiceProtocol.swift in Sources */,
 				8600E98B278EB5D400EE9C79 /* BaseCoordinator.swift in Sources */,
 				863276B12790170D005D40F9 /* TransactionType.swift in Sources */,
 				863276A4278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */,
+				863276BD27902E50005D40F9 /* AddEntryViewModelTest.swift in Sources */,
 				8600E9AD278EC22100EE9C79 /* HomeViewController.swift in Sources */,
 				8600E9DB278ED33300EE9C79 /* JGDropDown.swift in Sources */,
 				8600E98A278EB5D000EE9C79 /* BaseViewModel.swift in Sources */,
 				8600E9AC278EC21800EE9C79 /* Log.swift in Sources */,
 				8600E9D2278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */,
+				863276CD279038C6005D40F9 /* MockHomeCoordinator.swift in Sources */,
 				8600E9AA278EC20E00EE9C79 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,8 +663,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8600E973278EB28700EE9C79 /* JobGetTestUITests.swift in Sources */,
-				8600E975278EB28700EE9C79 /* JobGetTestUITestsLaunchTests.swift in Sources */,
+				863276D627903EC6005D40F9 /* TransactionServiceMock.swift in Sources */,
+				863276D727903F56005D40F9 /* TransactionType.swift in Sources */,
+				86AE3FFE2790480D00F9EC4B /* XCUIElementTypeQueryProvider+Extension.swift in Sources */,
+				863276DE27903FE0005D40F9 /* TransactionServiceProtocol.swift in Sources */,
+				86AE3FFF2790480D00F9EC4B /* XCUIElement+Extension.swift in Sources */,
+				863276D927903FA4005D40F9 /* JobGetTest.xcdatamodeld in Sources */,
+				86AE40042790540400F9EC4B /* AddTransactionTests.swift in Sources */,
+				863276D827903F95005D40F9 /* SingleTransaction.swift in Sources */,
+				86AE40002790480D00F9EC4B /* XCUIApplication+Extension.swift in Sources */,
+				863276CF27903BF4005D40F9 /* HomeViewUITests.swift in Sources */,
+				86AE40012790480D00F9EC4B /* TimeInterval+Timeout.swift in Sources */,
+				863276D527903D1C005D40F9 /* XCTestCase+Extension.swift in Sources */,
+				86AE3FFB2790480D00F9EC4B /* XCUITest+Extension.swift in Sources */,
+				86AE3FF32790407900F9EC4B /* Date+Extension.swift in Sources */,
+				86AE3FFC2790480D00F9EC4B /* XCUIElementQuery+Extenision.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

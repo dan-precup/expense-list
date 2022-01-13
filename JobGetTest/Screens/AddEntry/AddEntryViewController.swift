@@ -21,14 +21,17 @@ final class AddEntryViewController: UIViewController {
     private var bag = Set<AnyCancellable>()
     private let viewModel: AddEntryViewModel
     private let contentView = UIView()
-    private let transactionDescriptionTextfield = TitltedTextField(title: Constants.transactionDescriptionTitle, placeholder: Constants.transactionDescriptionPlaceholder)
+    private let transactionDescriptionTextfield = TitltedTextField(title: Constants.transactionDescriptionTitle,
+                                                                   placeholder: Constants.transactionDescriptionPlaceholder)
+        .identifier("transactionDescription")
     private let amountTextfield = TitltedTextField(title: Constants.amountTitle, placeholder: Constants.amountPlaceholder)
-    private let titleLabel = UILabel.title(Constants.titleString)
-    private let addButton = UIButton(configuration: .filled(), primaryAction: nil)
-    private let amountStepper = UIStepper()
-    private let closeButton = UIButton()
+        .identifier("transactionAmount")
+    private let titleLabel = UILabel.title(Constants.titleString).identifier("titleLabel")
+    private let addButton = UIButton(configuration: .filled(), primaryAction: nil).identifier("ctaButton")
+    private let amountStepper = UIStepper().identifier("amountStepper")
+    private let closeButton = UIButton().identifier("closeButton")
 
-    private lazy var transactionTypeDropDown = JGDropDown(options: viewModel.transactionTypeOptions, title: Constants.transactionTypeTitle)
+    private lazy var transactionTypeDropDown = JGDropDown(options: viewModel.transactionTypeOptions, title: Constants.transactionTypeTitle).identifier("transactionType")
 
     init(viewModel: AddEntryViewModel) {
         self.viewModel = viewModel
@@ -87,7 +90,7 @@ final class AddEntryViewController: UIViewController {
     private func setupContentView() {
         contentView.addAsSubview(of: view)
             .constrained()
-            .pinHorizontaly(to: view, padding: UIConstants.spacingDouble)
+            .pinHorizontaly(toSafeAreaOf: view, padding: UIConstants.spacingDouble)
             .background(.systemBackground)
             .centerY(to: view, constant: -view.frame.height * 0.05)
             .rounded()

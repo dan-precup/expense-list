@@ -14,6 +14,12 @@ extension UIView {
     }
     
     @discardableResult
+    @objc func identifier(_ id: String) -> Self {
+        accessibilityIdentifier = id
+        return self
+    }
+    
+    @discardableResult
     func background(_ color: UIColor = .systemBackground) -> Self {
         backgroundColor = color
         return self
@@ -91,6 +97,14 @@ extension UIView {
     func pinHorizontaly(to view: UIView, leadingMargin: CGFloat = 0, trailingMargin: CGFloat = 0) -> Self {
         return leading(to: view, constant: leadingMargin)
             .trailing(to: view, constant: trailingMargin)
+    }
+    
+    
+    @discardableResult
+    func pinHorizontaly(toSafeAreaOf view: UIView, padding: CGFloat = 0) -> Self {
+        leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding).isActive = true
+        trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding).isActive = true
+        return self
     }
     
     @discardableResult

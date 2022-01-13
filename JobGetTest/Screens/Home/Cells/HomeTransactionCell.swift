@@ -12,9 +12,9 @@ final class HomeTransactionCell: UITableViewCell {
         static let imageViewSide: CGFloat = 40
     }
     private let circleView = UIView()
-    private let trasactionLetterLabel = UILabel.make(weight: .semibold, size: 25, color: .white, numberOfLines: 1)
-    private let nameLabel = UILabel.make(weight: .semibold, size: 16)
-    private let amountLabel = UILabel.make(weight: .regular, size: 16)
+    private let trasactionLetterLabel = UILabel.make(weight: .semibold, size: 25, color: .white, numberOfLines: 1).identifier("transactionLetterLabel")
+    private let nameLabel = UILabel.make(weight: .semibold, size: 16).identifier("transactionNameLabel")
+    private let amountLabel = UILabel.make(weight: .regular, size: 16).identifier("transactionAmountLabel")
     private let timeLabel = UILabel.make(size: 12, color: .secondaryLabel, numberOfLines: 1)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -48,7 +48,7 @@ final class HomeTransactionCell: UITableViewCell {
     
     /// Set the transaction data in the respective outlets
     /// - Parameter transaction: The transaction
-    func setTransaction(_ transaction: Transaction) {
+    func setTransaction(_ transaction: SingleTransaction) {
         nameLabel.text = transaction.name
         amountLabel.text = transaction.signedAmount.asCurrency
         timeLabel.text = transaction.date?.timeString

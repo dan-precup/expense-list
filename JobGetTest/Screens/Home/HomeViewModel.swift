@@ -34,7 +34,7 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
     
     /// Delete entry
     /// - Parameter transaction: The transaction to delete
-    func deleteEntry(_ transaction: Transaction) {
+    func deleteEntry(_ transaction: SingleTransaction) {
         isLoading.value = true
         transactionService.deleteTransaction(transaction)
         reloadData()
@@ -67,7 +67,7 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
     
     /// Hidrate statistics
     /// - Parameter transaction: The transaction
-    private func addToStatistics(_ transaction: Transaction) {
+    private func addToStatistics(_ transaction: SingleTransaction) {
         let signedAmount = transaction.signedAmount
         if signedAmount > 0 {
             incomes += signedAmount
