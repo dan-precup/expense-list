@@ -78,7 +78,7 @@ class BaseCoordinator: Coordinatable {
     ///   - presentationStyle: The presentation style
     func present(_ viewController: UIViewController, presentationStyle: UIModalPresentationStyle) {
         viewController.modalPresentationStyle = presentationStyle
-        navigationController.present(viewController, animated: true)
+        navigationController.present(viewController, animated: false)
     }
     
     /// Dismiss a view controller

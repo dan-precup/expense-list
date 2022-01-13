@@ -46,6 +46,22 @@ final class AddEntryViewController: UIViewController {
         viewModel.didFinishLoading()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.contentView.transform = .identity
+        })
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.background(.clear)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.contentView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
+        })
+    }
+    
     private func setupUI() {
         view.background(.black.withAlphaComponent(0.4))
         setupContentView()
@@ -63,8 +79,9 @@ final class AddEntryViewController: UIViewController {
         transactionDescriptionTextfield.textField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
 
         setupCloseMethods()
+        contentView.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
     }
-    
+
     /// Setup the content view container
     private func setupContentView() {
         contentView.addAsSubview(of: view)
