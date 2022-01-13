@@ -41,6 +41,11 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
         isLoading.value = false
     }
     
+    /// Refresh the data
+    func didSelectRefreshData() {
+        reloadData()
+    }
+    
     /// Reload data and prompt the ui to refresh
     private func reloadData() {
         isLoading.value = true

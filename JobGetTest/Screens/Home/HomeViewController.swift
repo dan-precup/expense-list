@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 final class HomeViewController: UIViewController {
+    private let refreshControl = UIRefreshControl()
     private let viewModel: HomeViewModel
     private let loadingOverlay = LoadingOverlay()
     private let transactionCellId = "transactionCell"
@@ -23,6 +24,7 @@ final class HomeViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         table.separatorStyle = .none
+        table.refreshControl = refreshControl
         return table
     }()
     init(viewModel: HomeViewModel) {
@@ -57,15 +59,18 @@ final class HomeViewController: UIViewController {
             .tinted(.white)
             .setImage(UIImage(systemName: "plus"), for: .normal)
         fabAddButton.addTarget(self, action: #selector(didSelectCreateEntry), for: .touchUpInside)
+        refreshControl.addTarget(self, action: #selector(didSelectRefreshData), for: .valueChanged)
     }
     
     private func setupBindings() {
         viewModel.transactions
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] newTrasactions in
-                guard let self = self else { return }
-                self.transactions = newTrasactions
-                UIView.transition(with: self.tableView, duration: 0.3, options: .transitionCrossDissolve, animations: { self.tableView.reloadData() })
+                self?.transactions = newTrasactions
+                self?.tableView.reloadData()
+                if self?.refreshControl.isRefreshing ?? false {
+                    self?.refreshControl.endRefreshing()
+                }
             }).store(in: &bag)
         loadingOverlay.bindLoadingAnimator(viewModel, storedIn: &bag)
     }
@@ -73,6 +78,10 @@ final class HomeViewController: UIViewController {
     /// Promopt the view model to start the add flow
     @objc private func didSelectCreateEntry() {
         viewModel.didSelectCreateEntry()
+    }
+    
+    @objc private func didSelectRefreshData() {
+        viewModel.didSelectRefreshData()
     }
 }
 
