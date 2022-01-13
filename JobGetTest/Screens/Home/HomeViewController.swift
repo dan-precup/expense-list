@@ -12,11 +12,13 @@ final class HomeViewController: UIViewController {
     private let viewModel: HomeViewModel
     private let loadingOverlay = LoadingOverlay()
     private let transactionCellId = "transactionCell"
+    private let totalsCell = "totalsCell"
     private var transactions = [TransactionList]()
     private var bag = Set<AnyCancellable>()
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.register(HomeTransactionCell.self, forCellReuseIdentifier: transactionCellId)
+        table.register(HomeTotalsCell.self, forCellReuseIdentifier: totalsCell)
         table.delegate = self
         table.dataSource = self
         table.separatorStyle = .none
@@ -65,20 +67,31 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        transactions.count
+        transactions.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        transactions[safe: section]?.transactions.count ?? 0
+        if section == 0 {
+            return 1
+        }
+        return transactions[safe: section - 1]?.transactions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let list = transactions[safe: section] else { return nil }
+        guard section > 0, let list = transactions[safe: section - 1] else { return nil }
         return UILabel.body(list.date.dayPrettyString, size: 14, color: .secondaryLabel).wrapAndPin(padding: UIConstants.spacingDouble)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let transaction = transactions[safe: indexPath.section]?.transactions[safe: indexPath.row],
+        
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: totalsCell, for: indexPath) as? HomeTotalsCell
+            cell?.setData(totalIncome: viewModel.incomes, totalExpenses: abs(viewModel.expenses), balance: viewModel.total)
+            return cell ?? UITableViewCell()
+        }
+        
+        
+        guard let transaction = transactions[safe: indexPath.section - 1]?.transactions[safe: indexPath.row],
                 let cell = tableView.dequeueReusableCell(withIdentifier: transactionCellId, for: indexPath) as? HomeTransactionCell
         else { return UITableViewCell() }
         
@@ -89,7 +102,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            guard let transaction = transactions[safe: indexPath.section]?.transactions[indexPath.row] else { return nil }
+        guard indexPath.section > 0, let transaction = transactions[safe: indexPath.section - 1]?.transactions[indexPath.row] else { return nil }
             
             let deleteAction = UIContextualAction(style: .destructive, title: nil) { [weak self] ( _, _, completionHandler) in
                 self?.viewModel.deleteEntry(transaction)

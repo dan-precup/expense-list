@@ -77,6 +77,8 @@
 		863276A4278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */; };
 		863276A6278F287B005D40F9 /* Transaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A5278F287B005D40F9 /* Transaction+Extension.swift */; };
 		863276A7278F287B005D40F9 /* Transaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A5278F287B005D40F9 /* Transaction+Extension.swift */; };
+		863276AC27900658005D40F9 /* HomeTotalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AB27900658005D40F9 /* HomeTotalsCell.swift */; };
+		863276AD27900658005D40F9 /* HomeTotalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AB27900658005D40F9 /* HomeTotalsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,7 @@
 		863276A0278EFC48005D40F9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extesnion.swift"; sourceTree = "<group>"; };
 		863276A5278F287B005D40F9 /* Transaction+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Extension.swift"; sourceTree = "<group>"; };
+		863276AB27900658005D40F9 /* HomeTotalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTotalsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +309,7 @@
 				8600E99A278EB84300EE9C79 /* HomeContracts.swift */,
 				8600E9A0278EB86E00EE9C79 /* HomeCoordinator.swift */,
 				8600E9B5278EC24900EE9C79 /* HomeTransactionCell.swift */,
+				863276AB27900658005D40F9 /* HomeTotalsCell.swift */,
 				8600E99C278EB84900EE9C79 /* HomeViewController.swift */,
 				8600E99E278EB85600EE9C79 /* HomeViewModel.swift */,
 			);
@@ -482,6 +486,7 @@
 				8600E9A1278EB86E00EE9C79 /* HomeCoordinator.swift in Sources */,
 				863276A1278EFC48005D40F9 /* Date+Extension.swift in Sources */,
 				8600E987278EB54200EE9C79 /* BaseCoordinator.swift in Sources */,
+				863276AC27900658005D40F9 /* HomeTotalsCell.swift in Sources */,
 				8600E9D1278ECAEB00EE9C79 /* AddEntryViewModel.swift in Sources */,
 				8600E994278EB6F600EE9C79 /* UIView+Extesnion.swift in Sources */,
 				8600E94F278EB28600EE9C79 /* AppDelegate.swift in Sources */,
@@ -517,6 +522,7 @@
 				8600E9AE278EC22100EE9C79 /* HomeContracts.swift in Sources */,
 				8600E9BB278EC34A00EE9C79 /* TransactionList.swift in Sources */,
 				8600E9AF278EC22100EE9C79 /* HomeViewModel.swift in Sources */,
+				863276AD27900658005D40F9 /* HomeTotalsCell.swift in Sources */,
 				8600E9A9278EC20A00EE9C79 /* ServiceRegistry.swift in Sources */,
 				8600E9B7278EC24900EE9C79 /* HomeTransactionCell.swift in Sources */,
 				8600E9B1278EC22500EE9C79 /* ViewLoadedListener.swift in Sources */,

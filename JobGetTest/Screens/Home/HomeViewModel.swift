@@ -13,6 +13,9 @@ protocol HomeCoordinator: Coordinatable {
 }
 protocol HomeViewModel: LoadingNotifier, ViewLoadedListener {
     var transactions: CurrentValueSubject<[TransactionList], Never> { get }
+    var incomes: Double { get }
+    var expenses: Double { get }
+    var total: Double { get }
     func didSelectCreateEntry()
     func deleteEntry(_ transaction: Transaction)
 }
