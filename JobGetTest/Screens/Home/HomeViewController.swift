@@ -25,6 +25,7 @@ final class HomeViewController: UIViewController {
         table.dataSource = self
         table.separatorStyle = .none
         table.refreshControl = refreshControl
+        table.setEmptyViewText()
         return table
     }()
     init(viewModel: HomeViewModel) {
@@ -68,6 +69,7 @@ final class HomeViewController: UIViewController {
             .sink(receiveValue: { [weak self] newTrasactions in
                 self?.transactions = newTrasactions
                 self?.tableView.reloadData()
+                self?.tableView.setEmptyViewIfNeededFor(count: newTrasactions.count)
                 if self?.refreshControl.isRefreshing ?? false {
                     self?.refreshControl.endRefreshing()
                 }

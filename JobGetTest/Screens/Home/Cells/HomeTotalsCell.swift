@@ -16,6 +16,8 @@ final class HomeTotalsCell: UITableViewCell {
         static let expensesRatioFontSize: CGFloat = 13
         static let expensesRatioDescrTemplate = "Your expenses used up %.2f%% of your income"
         static let expensesOverflowRatioDescrTemplate = "Your expenses are greater than your income."
+        static let cleanSlateDescr = "Clean slate - no expenses, no problems."
+
     }
     private lazy var expensesTitleLabel = makeLabel(text: Constants.expensesLabelTitle, isValueLabel: false)
     private lazy var expensesValueLabel = makeLabel(text: "$0.00", isValueLabel: true)
@@ -63,15 +65,29 @@ final class HomeTotalsCell: UITableViewCell {
     ///   - totalExpenses: Total expenses
     ///   - balance: The current balance
     func setData(totalIncome: Double, totalExpenses: Double, balance: Double) {
-        let expensesToIncomeRatio = totalIncome == 0 ? Float(1) : min(1, Float(totalExpenses / totalIncome))
+        let expensesToIncomeRatio = totalIncome == 0 ? Float(0) : min(1, Float(totalExpenses / totalIncome))
         progressView.setProgress(expensesToIncomeRatio, animated: true)
         progressView.progressTintColor = getGetTintColor(for: expensesToIncomeRatio)
         
         incomeValueLabel.text = totalIncome.asCurrency
         expensesValueLabel.text = totalExpenses.asCurrency
         balanceValueLabel.text = balance.asCurrency
-        expensesRatioLabel.text = totalIncome < totalExpenses ? Constants.expensesOverflowRatioDescrTemplate
-                                : String(format: Constants.expensesRatioDescrTemplate, expensesToIncomeRatio * 100)
+        expensesRatioLabel.text = getExpensesRatioText(totalIncome: totalIncome, totalExpenses: totalExpenses, expensesToIncomeRatio: expensesToIncomeRatio)
+    }
+    
+    /// Compute the progress view description text
+    /// - Parameters:
+    ///   - totalIncome: Total income
+    ///   - totalExpenses: Total expenses
+    ///   - expensesToIncomeRatio: Expenses to income ratio
+    /// - Returns: The string
+    private func getExpensesRatioText(totalIncome: Double, totalExpenses: Double, expensesToIncomeRatio: Float) -> String {
+        guard totalExpenses > 0 else {
+            return Constants.cleanSlateDescr
+        }
+        
+        return totalIncome < totalExpenses ? Constants.expensesOverflowRatioDescrTemplate
+        : String(format: Constants.expensesRatioDescrTemplate, expensesToIncomeRatio * 100)
     }
     
     /// Gets a tint color based on a given value from 0 to 1

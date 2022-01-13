@@ -81,6 +81,8 @@
 		863276AD27900658005D40F9 /* HomeTotalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AB27900658005D40F9 /* HomeTotalsCell.swift */; };
 		863276B02790170D005D40F9 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AF2790170D005D40F9 /* TransactionType.swift */; };
 		863276B12790170D005D40F9 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AF2790170D005D40F9 /* TransactionType.swift */; };
+		863276B3279021EC005D40F9 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B2279021EC005D40F9 /* UITableView+Extension.swift */; };
+		863276B4279021EC005D40F9 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276B2279021EC005D40F9 /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,7 @@
 		863276A5278F287B005D40F9 /* Transaction+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Extension.swift"; sourceTree = "<group>"; };
 		863276AB27900658005D40F9 /* HomeTotalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTotalsCell.swift; sourceTree = "<group>"; };
 		863276AF2790170D005D40F9 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		863276B2279021EC005D40F9 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +285,7 @@
 				863276A0278EFC48005D40F9 /* Date+Extension.swift */,
 				863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */,
 				863276A5278F287B005D40F9 /* Transaction+Extension.swift */,
+				863276B2279021EC005D40F9 /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -524,6 +528,7 @@
 				8600E9D4278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
 				8632769D278EEBE8005D40F9 /* NumberFormatter+Extension.swift in Sources */,
 				863276A3278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */,
+				863276B3279021EC005D40F9 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +547,7 @@
 				8600E9A8278EC20700EE9C79 /* CoreDataStorage.swift in Sources */,
 				8600E9D8278ECF4800EE9C79 /* UIStackView+Extension.swift in Sources */,
 				8600E9DE278EE04700EE9C79 /* TitledTextField.swift in Sources */,
+				863276B4279021EC005D40F9 /* UITableView+Extension.swift in Sources */,
 				8600E9D5278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
 				8600E969278EB28700EE9C79 /* JobGetTestTests.swift in Sources */,
 				8600E9C5278EC82700EE9C79 /* LoadingOverlay.swift in Sources */,
