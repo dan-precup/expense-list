@@ -46,6 +46,8 @@ final class HomeTransactionCell: UITableViewCell {
         selectionStyle = .none
     }
     
+    /// Set the transaction data in the respective outlets
+    /// - Parameter transaction: The transaction
     func setTransaction(_ transaction: Transaction) {
         nameLabel.text = transaction.name
         amountLabel.text = transaction.signedAmount.asCurrency

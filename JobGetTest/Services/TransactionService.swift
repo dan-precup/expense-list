@@ -15,15 +15,22 @@ protocol TransactionService {
 }
 
 final class TransactionServiceImpl: TransactionService {
+    
+    /// Singleton instance
     static let shared = TransactionServiceImpl()
     
+    /// The persistence layer service
     private let storage: LocalStorageService
     
-    init(storage: LocalStorageService = ServiceRegistry.shared.localStorage) {
+    private init(storage: LocalStorageService = ServiceRegistry.shared.localStorage) {
         self.storage = storage
     }
     
-    
+    /// Create a transaction
+    /// - Parameters:
+    ///   - name: The transaction name
+    ///   - amount: The transaction amount
+    ///   - type: The transaction type
     func create(name: String, amount: Double, type: TransactionType) {
         guard let context = storage.getContext() else { return }
         let transaction = Transaction(context: context)
@@ -34,9 +41,11 @@ final class TransactionServiceImpl: TransactionService {
         
         storage.saveContext(context)
     }
-
+    
+    /// Get the transaction list
+    /// - Returns: A transactions array
     func getTransactions() -> [Transaction] {
-        guard let context = storage.getReadContext() else { return [] }
+        guard let context = storage.getMainContext() else { return [] }
         let fetchRequest = NSFetchRequest<Transaction>(entityName: "Transaction")
         let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -48,8 +57,10 @@ final class TransactionServiceImpl: TransactionService {
         return []
     }
     
+    /// Delete a transaction
+    /// - Parameter transaction: The transaction to delete
     func deleteTransaction(_ transaction: Transaction) {
-        guard let context = storage.getReadContext() else { return }
+        guard let context = storage.getMainContext() else { return }
         context.delete(transaction)
         storage.saveContext(context)
     }

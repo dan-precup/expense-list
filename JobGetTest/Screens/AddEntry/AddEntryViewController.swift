@@ -48,13 +48,7 @@ final class AddEntryViewController: UIViewController {
     
     private func setupUI() {
         view.background(.black.withAlphaComponent(0.4))
-       
-        contentView.addAsSubview(of: view)
-            .constrained()
-            .pinHorizontaly(to: view, padding: UIConstants.spacingDouble)
-            .background(.systemBackground)
-            .centerY(to: view)
-            .rounded()
+        setupContentView()
 
         addButton.setTitle(Constants.addButtonString, for: .normal)
         addButton.addTarget(self, action: #selector(didSelectAdd), for: .touchUpInside)
@@ -64,8 +58,6 @@ final class AddEntryViewController: UIViewController {
         [titleLabel, transactionTypeDropDown, transactionDescriptionTextfield, setupAmountFields(), addButton]
             .vStack(spacing: UIConstants.spacingDouble)
             .addAndPinAsSubview(of: contentView, padding: UIConstants.spacingDouble)
-        
-       
 
         transactionDescriptionTextfield.textField.delegate = self
         transactionDescriptionTextfield.textField.addTarget(self, action: #selector(didChangeDescription), for: .editingChanged)
@@ -73,6 +65,18 @@ final class AddEntryViewController: UIViewController {
         setupCloseMethods()
     }
     
+    /// Setup the content view container
+    private func setupContentView() {
+        contentView.addAsSubview(of: view)
+            .constrained()
+            .pinHorizontaly(to: view, padding: UIConstants.spacingDouble)
+            .background(.systemBackground)
+            .centerY(to: view)
+            .rounded()
+    }
+    
+    /// Setup the amount fields
+    /// - Returns: A amount fields horizontal stack
     private func setupAmountFields() -> UIView {
         let amountView = [
             amountTextfield,
@@ -88,6 +92,7 @@ final class AddEntryViewController: UIViewController {
         return amountView
     }
     
+    /// Prepare closing methods
     private func setupCloseMethods() {
         closeButton.addTarget(self, action: #selector(didSelectClose), for: .touchUpInside)
         closeButton.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
@@ -115,26 +120,33 @@ final class AddEntryViewController: UIViewController {
             }).store(in: &bag)
     }
     
+    /// Notify the VM amout a new value in the description textfield
     @objc private func didChangeDescription() {
         viewModel.didChangeDescription(to: transactionDescriptionTextfield.textField.text)
     }
     
+    /// Notify the VM amout a new value in the amount stepper field
     @objc private func didChangeStepperAmount() {
         viewModel.didChangeStepperAmount(to: amountStepper.value)
         amountTextfield.textField.text = viewModel.transactionAmount.value.asString
     }
-
+    
+    /// Handle the CTA trigger
     @objc private func didSelectAdd() {
         viewModel.didSelectCreateEntity()
     }
     
+    /// Handle the close event
     @objc private func didSelectClose() {
         viewModel.didSelectClose()
     }
 }
 
+// MARK: - UITextFieldDelegate implementation
 extension AddEntryViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //Simple return focus change
         if textField == transactionDescriptionTextfield.textField {
             amountTextfield.textField.becomeFirstResponder()
         }
@@ -144,13 +156,16 @@ extension AddEntryViewController: UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard textField == amountTextfield.textField else { return true }
+        // Build the new string
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        //Ensuring that we only have 2 digits after the decimal point
+        // Ensure that we only have 2 digits after the decimal point
         let components = updatedText.components(separatedBy: ".")
+        
         let shouldApplyChanges = components.count > 1 ? components[1].count <= 2 : true
         if shouldApplyChanges {
+            //Only notify VM if we shoudl apply changes
             viewModel.didChangeAmount(to: updatedText)
         }
         return shouldApplyChanges

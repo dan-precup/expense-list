@@ -8,18 +8,6 @@
 import Combine
 import Foundation
 
-enum TransactionType: Int, CaseIterable {
-    case expense
-    case income
-    
-    var title: String {
-        switch self {
-        case .expense: return "Expense"
-        case .income: return "Income"
-        }
-    }
-}
-
 final class AddEntryViewModelImpl: BaseViewModel, AddEntryViewModel {
     var transactionTypeOptions: [String] = TransactionType.allCases.map({ $0.title })
     private let coordinator: Coordinatable

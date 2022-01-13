@@ -32,6 +32,10 @@ final class LoadingOverlay: UIView {
         isHidden = true
     }
     
+    /// Bind the overkay to a `LoadingNotifier`
+    /// - Parameters:
+    ///   - notifier: The notifier
+    ///   - storedIn: The storge bag
     func bindLoadingAnimator(_ notifier: LoadingNotifier, storedIn: inout Set<AnyCancellable>) {
         notifier.isLoading.share()
             .receive(on: DispatchQueue.main)

@@ -12,7 +12,7 @@ protocol LocalStorageService {
     func getContext() -> NSManagedObjectContext?
     func saveContext(_ subContext: NSManagedObjectContext?)
     func setContextFrom(_ storeContainer: NSPersistentContainer)
-    func getReadContext() -> NSManagedObjectContext?
+    func getMainContext() -> NSManagedObjectContext?
 }
 
 final class CoreDataStorage: LocalStorageService {
@@ -48,7 +48,7 @@ final class CoreDataStorage: LocalStorageService {
     
     /// The a read-safe context (returns the main context)
     /// - Returns: NSManagedObjectContext
-    func getReadContext() -> NSManagedObjectContext? {
+    func getMainContext() -> NSManagedObjectContext? {
         mainContext
     }
     

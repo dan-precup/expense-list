@@ -7,10 +7,8 @@
 
 import Foundation
 
+/// Date grouping model for transactions
 struct TransactionList {
     let date: Date
     var transactions: [Transaction]
-    var dayTotal: Double {
-        transactions.reduce(0, { $0 + $1.signedAmount })
-    }
 }

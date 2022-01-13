@@ -50,10 +50,8 @@ final class JGDropDown: UIView {
 
     }
     
-    @objc private func didSelectView() {
-        
-    }
-    
+    /// Build the menu
+    /// - Returns: The UIMenu
     private func makeMenu() -> UIMenu  {
           let actions = options
             .enumerated()
@@ -71,6 +69,8 @@ final class JGDropDown: UIView {
     }
     
     
+    /// Handle the option selection
+    /// - Parameter action: The action that was selected
     private func didSelectOption(from action: UIAction) {
         guard let index = Int(action.identifier.rawValue) else {
           return

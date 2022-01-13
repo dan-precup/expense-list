@@ -15,6 +15,7 @@ final class HomeTotalsCell: UITableViewCell {
         static let progressViewHeight: CGFloat = 5
         static let expensesRatioFontSize: CGFloat = 13
         static let expensesRatioDescrTemplate = "Your expenses used up %.2f%% of your income"
+        static let expensesOverflowRatioDescrTemplate = "Your expenses are greater than your income."
     }
     private lazy var expensesTitleLabel = makeLabel(text: Constants.expensesLabelTitle, isValueLabel: false)
     private lazy var expensesValueLabel = makeLabel(text: "$0.00", isValueLabel: true)
@@ -23,7 +24,7 @@ final class HomeTotalsCell: UITableViewCell {
     private lazy var balanceTitleLabel = makeLabel(text: Constants.balanceLabelTitle, isValueLabel: false)
     private lazy var balanceValueLabel = makeLabel(text: "$0.00", isValueLabel: true)
     private let progressView = UIProgressView()
-    private let expensesRatioLabel = UILabel.make(size: Constants.expensesRatioFontSize, color: .secondaryLabel, numberOfLines: 1)
+    private let expensesRatioLabel = UILabel.make(size: Constants.expensesRatioFontSize, color: .secondaryLabel, numberOfLines: 2)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -43,31 +44,54 @@ final class HomeTotalsCell: UITableViewCell {
         ].hStack(distribution: .fillEqually)
         
         progressView.height(Constants.progressViewHeight)
-        let progressVieWrapper = progressView.wrapAndPin(leading: UIConstants.spacingDouble, trailing: -UIConstants.spacingDouble)
         expensesRatioLabel.textCentered()
             .shrinkToFit()
         
         let mainStack = [
             labelsStack,
             expensesRatioLabel,
-            progressVieWrapper,
-            
+            progressView.wrapAndPin(leading: UIConstants.spacingDouble, trailing: -UIConstants.spacingDouble)
         ]
             .vStack(spacing: UIConstants.spacingDouble)
             .addAndPinAsSubview(of: contentView, padding: UIConstants.spacingDouble)
         mainStack.setCustomSpacing(UIConstants.spacing, after: expensesRatioLabel)
     }
     
+    /// Set the cell data
+    /// - Parameters:
+    ///   - totalIncome: Total income
+    ///   - totalExpenses: Total expenses
+    ///   - balance: The current balance
     func setData(totalIncome: Double, totalExpenses: Double, balance: Double) {
-        let expensesToIncomeRatio = totalIncome == 0 ? Float(1) : Float(totalExpenses / totalIncome)
+        let expensesToIncomeRatio = totalIncome == 0 ? Float(1) : min(1, Float(totalExpenses / totalIncome))
         progressView.setProgress(expensesToIncomeRatio, animated: true)
+        progressView.progressTintColor = getGetTintColor(for: expensesToIncomeRatio)
+        
         incomeValueLabel.text = totalIncome.asCurrency
         expensesValueLabel.text = totalExpenses.asCurrency
         balanceValueLabel.text = balance.asCurrency
-        expensesRatioLabel.text = String(format: Constants.expensesRatioDescrTemplate, expensesToIncomeRatio * 100)
-
+        expensesRatioLabel.text = totalIncome < totalExpenses ? Constants.expensesOverflowRatioDescrTemplate
+                                : String(format: Constants.expensesRatioDescrTemplate, expensesToIncomeRatio * 100)
     }
     
+    /// Gets a tint color based on a given value from 0 to 1
+    /// - Parameter expensesToIncomeRatio: The value
+    /// - Returns: The tint color
+    private func getGetTintColor(for expensesToIncomeRatio: Float) -> UIColor {
+        if (0.8...0.9).contains(expensesToIncomeRatio) {
+            return .systemOrange
+        } else if expensesToIncomeRatio > 0.9 {
+            return .systemRed
+        }
+        
+        return .systemGreen
+    }
+    
+    /// Create a label
+    /// - Parameters:
+    ///   - text: The text if any
+    ///   - isValueLabel: If it's a amount label
+    /// - Returns: The label
     private func makeLabel(text: String = "", isValueLabel: Bool) -> UILabel {
         UILabel.make(text,
                      weight: isValueLabel ? .semibold : .regular,

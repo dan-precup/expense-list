@@ -79,6 +79,8 @@
 		863276A7278F287B005D40F9 /* Transaction+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276A5278F287B005D40F9 /* Transaction+Extension.swift */; };
 		863276AC27900658005D40F9 /* HomeTotalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AB27900658005D40F9 /* HomeTotalsCell.swift */; };
 		863276AD27900658005D40F9 /* HomeTotalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AB27900658005D40F9 /* HomeTotalsCell.swift */; };
+		863276B02790170D005D40F9 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AF2790170D005D40F9 /* TransactionType.swift */; };
+		863276B12790170D005D40F9 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863276AF2790170D005D40F9 /* TransactionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,7 @@
 		863276A2278F21BD005D40F9 /* UIColor+Extesnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extesnion.swift"; sourceTree = "<group>"; };
 		863276A5278F287B005D40F9 /* Transaction+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+Extension.swift"; sourceTree = "<group>"; };
 		863276AB27900658005D40F9 /* HomeTotalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTotalsCell.swift; sourceTree = "<group>"; };
+		863276AF2790170D005D40F9 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,10 +309,9 @@
 		8600E999278EB83500EE9C79 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				863276AE27900FCA005D40F9 /* Cells */,
 				8600E99A278EB84300EE9C79 /* HomeContracts.swift */,
 				8600E9A0278EB86E00EE9C79 /* HomeCoordinator.swift */,
-				8600E9B5278EC24900EE9C79 /* HomeTransactionCell.swift */,
-				863276AB27900658005D40F9 /* HomeTotalsCell.swift */,
 				8600E99C278EB84900EE9C79 /* HomeViewController.swift */,
 				8600E99E278EB85600EE9C79 /* HomeViewModel.swift */,
 			);
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				8600E9B9278EC34A00EE9C79 /* TransactionList.swift */,
+				863276AF2790170D005D40F9 /* TransactionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +345,15 @@
 				8600E9D0278ECAEB00EE9C79 /* AddEntryViewModel.swift */,
 			);
 			path = AddEntry;
+			sourceTree = "<group>";
+		};
+		863276AE27900FCA005D40F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8600E9B5278EC24900EE9C79 /* HomeTransactionCell.swift */,
+				863276AB27900658005D40F9 /* HomeTotalsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +518,7 @@
 				8600E99D278EB84900EE9C79 /* HomeViewController.swift in Sources */,
 				8600E951278EB28600EE9C79 /* SceneDelegate.swift in Sources */,
 				8600E9CB278ECADA00EE9C79 /* AddEntryContracts.swift in Sources */,
+				863276B02790170D005D40F9 /* TransactionType.swift in Sources */,
 				8600E9DD278EE04700EE9C79 /* TitledTextField.swift in Sources */,
 				8600E9A3278EBA2B00EE9C79 /* ViewLoadedListener.swift in Sources */,
 				8600E9D4278ECDEC00EE9C79 /* UILabel+extension.swift in Sources */,
@@ -542,6 +555,7 @@
 				8600E9CF278ECAE300EE9C79 /* AddEntryViewController.swift in Sources */,
 				8600E9C8278EC90D00EE9C79 /* UIActivityIndicator+Extension.swift in Sources */,
 				8600E98B278EB5D400EE9C79 /* BaseCoordinator.swift in Sources */,
+				863276B12790170D005D40F9 /* TransactionType.swift in Sources */,
 				863276A4278F21BD005D40F9 /* UIColor+Extesnion.swift in Sources */,
 				8600E9AD278EC22100EE9C79 /* HomeViewController.swift in Sources */,
 				8600E9DB278ED33300EE9C79 /* JGDropDown.swift in Sources */,

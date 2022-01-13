@@ -14,11 +14,6 @@ protocol Coordinatable: AnyObject {
     func push(_ viewController: UIViewController, animated: Bool)
     func push(_ viewController: UIViewController, animated: Bool, title: String?)
     func present(_ viewController: UIViewController)
-    func present(_ viewController: UIViewController, over: UIViewController?)
-    func back()
-    func back(animated: Bool)
     func dismiss()
     func dismiss(completion: (() -> Void)?)
-    func backToRoot()
-    func backToRoot(animated: Bool)
 }

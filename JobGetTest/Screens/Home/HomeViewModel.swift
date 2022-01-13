@@ -5,20 +5,8 @@
 //  Created by Precup Aurel Dan on 12/01/2022.
 //
 
-import Foundation
 import Combine
-
-protocol HomeCoordinator: Coordinatable {
-    func presentAddEntryForm(delegate: AddEntryDelegate?)
-}
-protocol HomeViewModel: LoadingNotifier, ViewLoadedListener {
-    var transactions: CurrentValueSubject<[TransactionList], Never> { get }
-    var incomes: Double { get }
-    var expenses: Double { get }
-    var total: Double { get }
-    func didSelectCreateEntry()
-    func deleteEntry(_ transaction: Transaction)
-}
+import Foundation
 
 final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
     private(set) var incomes: Double = 0
@@ -34,14 +22,18 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
         super.init()
     }
     
+    /// React to the view finishing loading
     func didFinishLoading() {
         reloadData()
     }
     
+    /// Start the create entity flow
     func didSelectCreateEntry() {
         coordinator.presentAddEntryForm(delegate: self)
     }
     
+    /// Delete entry
+    /// - Parameter transaction: The transaction to delete
     func deleteEntry(_ transaction: Transaction) {
         isLoading.value = true
         transactionService.deleteTransaction(transaction)
@@ -49,6 +41,7 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
         isLoading.value = false
     }
     
+    /// Reload data and prompt the ui to refresh
     private func reloadData() {
         isLoading.value = true
         var transDict = [String: TransactionList]()
@@ -67,6 +60,8 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
         isLoading.value = false
     }
     
+    /// Hidrate statistics
+    /// - Parameter transaction: The transaction
     private func addToStatistics(_ transaction: Transaction) {
         let signedAmount = transaction.signedAmount
         if signedAmount > 0 {
@@ -78,6 +73,7 @@ final class HomeViewModelImpl: BaseViewModel, HomeViewModel {
     }
 }
 
+// MARK: - AddEntryDelegate implementation
 extension HomeViewModelImpl: AddEntryDelegate {
     func didCreateNewEntry() {
         reloadData()

@@ -60,11 +60,13 @@ final class HomeViewController: UIViewController {
         loadingOverlay.bindLoadingAnimator(viewModel, storedIn: &bag)
     }
     
+    /// Promopt the view model to start the add flow
     @objc private func didSelectCreateEntry() {
         viewModel.didSelectCreateEntry()
     }
 }
 
+// MARK: - UITableViewDataSource implementation
 extension HomeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         transactions.count + 1
@@ -99,6 +101,8 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate implementation
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
