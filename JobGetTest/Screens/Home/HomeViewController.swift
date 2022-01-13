@@ -15,6 +15,7 @@ final class HomeViewController: UIViewController {
     private let totalsCell = "totalsCell"
     private var transactions = [TransactionList]()
     private var bag = Set<AnyCancellable>()
+    private let fabAddButton = UIButton()
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
         table.register(HomeTransactionCell.self, forCellReuseIdentifier: transactionCellId)
@@ -46,7 +47,16 @@ final class HomeViewController: UIViewController {
         loadingOverlay.addAsSubview(of: view)
         title = "Transactions"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didSelectCreateEntry))
+        fabAddButton.addAsSubview(of: view)
+            .constrained()
+            .trailing(to: view, constant: -UIConstants.spacingTripe)
+            .bottom(to: view, constant: -UIConstants.spacingTripe)
+            .background(.systemBlue)
+            .dimensions(width: UIConstants.inputHeight, height: UIConstants.inputHeight)
+            .rounded(radius: UIConstants.inputHeight / 2)
+            .tinted(.white)
+            .setImage(UIImage(systemName: "plus"), for: .normal)
+        fabAddButton.addTarget(self, action: #selector(didSelectCreateEntry), for: .touchUpInside)
     }
     
     private func setupBindings() {
